@@ -55,13 +55,101 @@
             object-position: top; /* Aligns the image to the top */
             border-radius: 8px 8px 0 0; /* Optional: Rounded corners at the top */
         }
+
+        .hero {
+            height: 100vh;
+            background: url('Versaria.library/images/M9AAD0F3KI943.info/d9ns58b-7070d9b1-d8a5-4039-80e4-c7bf85aad8a4.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Simplified Header Styles for centered nav only */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center; /* Horizontally centers the nav */
+            align-items: center; /* Vertically centers the nav */
+        }
+
+        nav ul {
+            display: flex; /* Uses flexbox for the list */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 15px; /* Adds spacing between items */
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f0c14b;
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
             <nav>
-                <ul class="nav-links">
+                <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="Character.html"><i class="fas fa-users"></i> Characters</a></li>
                     <li><a href="Creature.html" class="active"><i class="fas fa-paw"></i> Creatures</a></li>
@@ -70,20 +158,16 @@
                     <li><a href="#"><i class="fas fa-book"></i> Lore</a></li>
                     <li><a href="Mechanics.html"><i class="fas fa-cogs"></i> Mechanics</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </nav>
-        </div>
     </header>
 
     <!-- Add the banner section -->
-    <div class="banner">
-        <img src="Versaria.library/images/M9AAD0F3KI943.info/d9ns58b-7070d9b1-d8a5-4039-80e4-c7bf85aad8a4.jpg" alt="Creatures Banner">
-        <h1 class="banner-title">Creatures</h1>
-    </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Creatures</h1>
+            <p></p>
+        </div>
+    </section>
 
     <main class="main-container">
         <div class="filters">
@@ -392,8 +476,8 @@
                 id: 5,
                 name: "Sura",
                 faction: "Human",
-                image: "Versaria.library/images/M8TZU4PJVHI5X.info/dc1iona-661a5edf-f83a-436b-a000-fb8b6736fb45.jpg",
-                fullImage: "Versaria.library/images/M8TZU4PJVHI5X.info/dc1iona-661a5edf-f83a-436b-a000-fb8b6736fb45.jpg",
+                image: "Versaria.library/images/M7X3R90JQIFGF.info/f9f75a04f6574f08a46cb5cba5575276.jpg",
+                fullImage: "Versaria.library/images/M7X3R90JQIFGF.info/f9f75a04f6574f08a46cb5cba5575276.jpg",
                 description: "Ageless dark-skinned warriors who transition from male to revered feminine elders at 50. Their society blends martial discipline with spiritual rebirth, governed by a sacred life cycle of strength and wisdom.",
                 behavior: "Communal and duty-bound. Adults serve as protectors; elders guide through ancestral wisdom. Highly ritualistic.",
                 habitat: "Fortified mountain monasteries, sunlit temples",
