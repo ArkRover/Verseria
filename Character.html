@@ -1,126 +1,185 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="ChStyle.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div class="topnav">
-            <a href="http://127.0.0.1:5500/index.html">Home</a>
-            <a class="active" href="http://127.0.0.1:5500/Character.html">Characters</a>
-            <a href="#species">Species</a>
-            <a href="#factions">Factions</a>
-            <a href="http://127.0.0.1:5500/World.html">Locations</a>
-            <a href="#skills">Skills</a>
-            <a href="#weapons">Weapons</a>
-            <a href="http://127.0.0.1:5500/History.html">History</a>
-            <a href="http://127.0.0.1:5500/Mechanics.html">Mechanics</a>
-            <a href="http://127.0.0.1:5500/Hex.html">Hex</a>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versaria - Characters</title>
+    <meta name="description" content="Explore the characters of the Versaria universe">
+    <link rel="icon" href="Versaria.library/images/M8QC221ABYWHV.info/wp8756069.webp" type="image/x-icon">
+    <link rel="stylesheet" href="ChStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="http://127.0.0.1:5500/Character.html#" class="active"><i class="fas fa-users"></i> Characters</a></li>
+                    <li><a href="Creature.html"><i class="fas fa-paw"></i> Creatures</a></li>
+                    <li><a href="http://127.0.0.1:5500/Customization.html"><i class="fas fa-user-edit"></i> Customization</a></li>
+                    <li><a href="World.html"><i class="fas fa-globe"></i> World</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Lore</a></li>
+                    <li><a href="Mechanics.html"><i class="fas fa-cogs"></i> Mechanics</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
         </div>
+    </header>
 
-        <div class="row">
-            <div class="column">
-                <div class="card">
-                    <img src="Versaria.library\images\M6C0GGL95GEMW.info\e76defd8e2db4ac71ed80eb5a6bd2489.jpg" alt="Sinclair" style="width:100%">
-                    <div class="container">
-                        <h2>Sinclair</h2>
-                        <p class="title">Royal advisor &amp; n/a</p>
-                        <p>A vampire who has been with one of The Great Noble Families as an advisor for centeries until she became a 
-                        concubine for the 21st king, he wanted her to be married to him as the queen but due to others in power not 
-                        wanting a vampire to rule the nation<span id="dots">...</span><span id="more"> she only agreed to be a 
-                        concubine for the king as long as he married a woman he can love. After the king passed from old age she 
-                        continued being a royal advisor and unexpectedly began to be treaded better due to her being officailly 
-                        recognised for being part of the royal family.</span></p>
-                        <button  class="button" onclick="myFunction()" id="myBtn">Read more</button>
-                        <p class="title">Vampire/Human</p>
-                    </div>
+    <div class="banner">
+        <img src="Versaria.library\images\M83EAOMZXIWYV.info\109299948_p0_master1200.jpg" alt="Creatures Banner">
+        <h1 class="banner-title">Characters</h1>
+    </div>
+
+    <main class="main-container">
+        <div class="character-grid">
+            <div class="character-card">
+                <div class="card-image">
+                    <img src="Versaria.library/images/M6C0GGL95GEMW.info/e76defd8e2db4ac71ed80eb5a6bd2489.jpg" alt="Sinclair">
+                </div>
+                <div class="card-content">
+                    <h2>Sinclair</h2>
+                    <p class="character-title">Royal advisor &amp; Concubine</p>
+                    <p class="character-description">
+                        A elven who has served one of The Great Noble Families as an advisor for centuries until becoming a 
+                        concubine for the 21st king. Though he wished to marry her as queen, political opposition prevented this.
+                        <span class="dots">...</span>
+                        <span class="more-text" style="display: none;">
+                            She agreed to remain as concubine on the condition he marry a woman he could love. 
+                            After the king's natural death, she continued as royal advisor and gained greater respect as an official 
+                            member of the royal family.
+                        </span>
+                    </p>
+                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    <p class="character-species">Elven/Human</p>
                 </div>
             </div>
-          
-            <div class="column">
-                <div class="card">
-                    <div class="wrap">
-                        <img src="Versaria.library\images\M6C05INGYYPLD.info\BlakeValkyrieOfTheDarkMoon.jpg" alt="Blake" style="width:100%">
-                    </div>
-                    <div class="container">
-                        <h2>Blake</h2>
-                        <p class="title">Valkyrie of the dark moon</p>
-                        <p></p>
-                        <p><button class="button">Contact</button></p>
-                        <p class="title">Hob/Human</p>
-                    </div>
+            
+            <!-- Other character cards follow the same pattern -->
+            
+            <div class="character-card">
+                <div class="card-image">
+                    <img src="Versaria.library/images/M6C05INGYYPLD.info/BlakeValkyrieOfTheDarkMoon.jpg" alt="Blake">
+                </div>
+                <div class="card-content">
+                    <h2>Blake</h2>
+                    <p class="character-title">Valkyrie of the Dark Moon</p>
+                    <p class="character-description">A mysterious warrior who serves the lunar deities.</p>
+                    <button class="character-contact">Details <i class="fas fa-info-circle"></i></button>
+                    <p class="character-species">Hob/Human</p>
                 </div>
             </div>
-          
-            <div class="column">
-                <div class="card">
-                    <img src="Versaria.library\images\M6C0ENH6ORPAV.info\dfe1dfd55529515d131c150314ad53f2.jpg" alt="Levana" style="width:100%">
-                    <div class="container">
-                        <h2>Levana</h2>
-                        <p class="title">Temple knight</p>
-                        <p></p>
-                        <p><button class="button">Contact</button></p>
-                        <p class="title">Hob/Human</p>
-                    </div>
+            
+            <div class="character-card">
+                <div class="card-image">
+                    <img src="Versaria.library/images/M6C0ENH6ORPAV.info/dfe1dfd55529515d131c150314ad53f2.jpg" alt="Levana">
+                </div>
+                <div class="card-content">
+                    <h2>Levana</h2>
+                    <p class="character-title">Temple Knight</p>
+                    <p class="character-description">A devoted guardian of sacred sites.</p>
+                    <button class="character-contact">Details <i class="fas fa-info-circle"></i></button>
+                    <p class="character-species">Hob/Human</p>
                 </div>
             </div>
-            <div class="column">
-                <div class="card">
-                    <div class="wrap">
-                        <img src="Versaria.library\images\M6C05GU62V070.info\LeoneValkyrieOfTheRisingSun.jpg" alt="Leone" style="width:100%">
-                    </div>
-                    <div class="container">
-                        <h2>Leone</h2>
-                        <p class="title">Valkyrie of the rising sun</p>
-                        <p></p>
-                        <p><button class="button">Contact</button></p>
-                        <p class="title">Hob/Human</p>
-                    </div>
+            
+            <div class="character-card">
+                <div class="card-image">
+                    <img src="Versaria.library/images/M6C05GU62V070.info/LeoneValkyrieOfTheRisingSun.jpg" alt="Leone">
+                </div>
+                <div class="card-content">
+                    <h2>Leone</h2>
+                    <p class="character-title">Valkyrie of the Rising Sun</p>
+                    <p class="character-description">Solar counterpart to Blake, warrior of dawn.</p>
+                    <button class="character-contact">Details <i class="fas fa-info-circle"></i></button>
+                    <p class="character-species">Hob/Human</p>
+                </div>
+            </div>
+            
+            <div class="character-card">
+                <div class="card-image">
+                    <img src="Versaria.library/images/M83F9RHO3FBZY.info/124088059_p0_master1200.png" alt="Domitri">
+                </div>
+                <div class="card-content">
+                    <h2>Domitri</h2>
+                    <p class="character-title">Dragon Lord</p>
+                    <p class="character-description">A powerful being of draconic heritage.</p>
+                    <button class="character-contact">Details <i class="fas fa-info-circle"></i></button>
+                    <p class="character-species">Dragonkin/Dragon</p>
+                </div>
+            </div>
+            
+            <div class="character-card">
+                <div class="card-image">
+                    <img src="Versaria.library/images/M8M122IW23XZS.info/Vivas_ren.webp" alt="Vivian">
+                </div>
+                <div class="card-content">
+                    <h2>Vivian</h2>
+                    <p class="character-title">Mystic Seer</p>
+                    <p class="character-description">Keeper of ancient knowledge and visions.</p>
+                    <button class="character-contact">Details <i class="fas fa-info-circle"></i></button>
+                    <p class="character-species">Hob/Human</p>
                 </div>
             </div>
 
-            <div class="column">
-                <div class="card">
-                    <div class="wrap">
-                        <img src="Versaria.library\images\M83F9RHO3FBZY.info\124088059_p0_master1200.png" alt="Domitri" style="width:100%">
-                    </div>
-                    <div class="container">
-                        <h2>Domitri</h2>
-                        <p class="title"></p>
-                        <p></p>
-                        <p><button class="button">Contact</button></p>
-                        <p class="title">Dragonkin/Dragon</p>
-                    </div>
+            <div class="character-card">
+                <div class="card-image">
+                    <img src="Versaria.library\images\M8TZU4PJVHI5X.info\dc1iona-661a5edf-f83a-436b-a000-fb8b6736fb45.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <h2>Chian</h2>
+                    <p class="character-title">KNIGHT</p>
+                    <p class="character-description">
+                        
+                        <span class="dots">...</span>
+                        <span class="more-text" style="display: none;">
+                            
+                        </span>
+                    </p>
+                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    <p class="character-species"></p>
                 </div>
             </div>
 
-            <div class="column">
-                <div class="card">
-                    <div class="wrap">
-                        <img src="Versaria.library\images\M8M122IW23XZS.info\Vivas_ren.webp" alt="Vivian" style="width:100%">
-                    </div>
-                    <div class="container">
-                        <h2>Vivian</h2>
-                        <p class="title"></p>
-                        <p></p>
-                        <p><button class="button">Contact</button></p>
-                        <p class="title">Hob/Human</p>
-                    </div>
+            <div class="character-card">
+                <div class="card-image">
+                    <img src="Versaria.library\images\M91OZE5R999ES.info\193a28c010ee1f567bf4fe82e53351b7.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <h2></h2>
+                    <p class="character-title"></p>
+                    <p class="character-description">
+                        
+                        <span class="dots">...</span>
+                        <span class="more-text" style="display: none;">
+                            
+                        </span>
+                    </p>
+                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    <p class="character-species"></p>
                 </div>
             </div>
         </div>
+    </main>
 
-        <script src="ChScript.js" async defer></script>
-    </body>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Versaria Universe. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-patreon"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="ChScript.js"></script>
+</body>
 </html>

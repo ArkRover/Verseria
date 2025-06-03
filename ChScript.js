@@ -1,15 +1,23 @@
-function myFunction() {
-    var dots = document.getElementById("dots");
-    var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
+document.addEventListener('DOMContentLoaded', function() {
+  // Set up all read more buttons
+  const readMoreButtons = document.querySelectorAll('.read-more-btn');
   
-    if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more";
-      moreText.style.display = "none";
-    } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
-      moreText.style.display = "inline";
-    }
-  }
+  readMoreButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          const card = this.closest('.character-card');
+          const dots = card.querySelector('.dots');
+          const moreText = card.querySelector('.more-text');
+          const btnText = card.querySelector('.read-more-btn');
+          
+          if (moreText.style.display === 'inline' || moreText.style.display === '') {
+              dots.style.display = 'inline';
+              btnText.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+              moreText.style.display = 'none';
+          } else {
+              dots.style.display = 'none';
+              btnText.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+              moreText.style.display = 'inline';
+          }
+      });
+  });
+});

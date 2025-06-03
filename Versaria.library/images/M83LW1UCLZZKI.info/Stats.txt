@@ -1,0 +1,6 @@
+Balance
+Defence
+Health
+Mana pool
+Attack
+Intelligence

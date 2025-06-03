@@ -1,76 +1,407 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="MeStyle.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div class="topnav">
-            <a href="http://127.0.0.1:5500/index.html">Home</a>
-            <a href="http://127.0.0.1:5500/Character.html">Characters</a>
-            <a href="#species">Species</a>
-            <a href="#factions">Factions</a>
-            <a href="http://127.0.0.1:5500/World.html">Locations</a>
-            <a href="#skills">Skills</a>
-            <a href="#weapons">Weapons</a>
-            <a href="http://127.0.0.1:5500/History.html">History</a>
-            <a class="active" href="http://127.0.0.1:5500/Mechanics.html">Mechanics</a>
-            <a href="http://127.0.0.1:5500/Hex.html">Hex</a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versaria - Mechanics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .album-header {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .album-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .album-meta {
+            display: flex;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .album-meta span {
+            margin-right: 15px;
+        }
+        
+        .album-description {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .album-tags {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background-color: #e0e0e0;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .gallery-item {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item-info {
+            padding: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .pagination a {
+            padding: 8px 15px;
+            margin: 0 5px;
+            background-color: white;
+            border-radius: 3px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .pagination a.active {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            display: block;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-nav button {
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background-color: rgba(0,0,0,0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Mechanics</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Albums</a></li>
+                <li><a href="#">Artists</a></li>
+                <li><a href="#">Tags</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="album-header">
+            <h1 class="album-title">Mechanics</h1>
+            <div class="album-meta">
+                <span>By: <a href="#">Lunate</a></span>
+                <span>200 images</span>
+                <span>500 favorites</span>
+                <span>Updated: 2 weeks ago</span>
+            </div>
+            <div class="album-description">
+                A collection of beautiful digital artwork by the talented artist Lunate. This album features a variety of characters and scenes with vibrant colors and detailed designs.
+            </div>
+            <div class="album-tags">
+                <span class="tag">digital art</span>
+                <span class="tag">anime</span>
+                <span class="tag">fantasy</span>
+                <span class="tag">colorful</span>
+                <span class="tag">character design</span>
+            </div>
         </div>
-
-        <div class="row">
-            <div class="column" style="background-color:#aaa;">
-                <h2>Stats</h2>
-                <p><ul>
-                    <li>Attack</li>
-                    <li>Balance</li>
-                    <li>Defence</li>
-                    <li>Health</li>
-                    <li>Mana pool</li>
-                    <li>Intelligence</li>
-                </ul></p>
-            </div>
-            <div class="column" style="background-color:#686767;">
-                <h2>Weather system</h2>
-                <p><ul>
-                    <li></li>
-                </ul></p>
-            </div>
-            <div class="column" style="background-color:#aaa;">
-                <h2>Column 1</h2>
-                <p><ul>
-                    <li></li>
-                </ul></p>
-            </div>
-            <div class="column" style="background-color:#626262;">
-                <h2>Column 1</h2>
-                <p><ul>
-                    <li></li>
-                </ul></p>
-            </div>
+        
+        <div class="gallery" id="gallery">
+            <!-- Images will be loaded here by JavaScript -->
         </div>
-        <h1 style="text-align: center;">Other projects</h1>
-        <div>
-            <div class="column" style="background-color:#5e5e5e;">
-                <h2>Fighter</h2>
-                <p><ul>
-                    <li>A 2D fighting game with 3D character models, Using the characters in the MMO game's story.</li>
-                    <li>Tag system: Up to 4 characters can be used in a 2v2 tag team match.</li>
-                    <li>Actions: Light, Medium, Heavy and Special.</li>
-                </ul></p>
-            </div>
+        
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">Next →</a>
         </div>
-        <script src="" async defer></script>
-    </body>
+    </div>
+    
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">×</button>
+        <div class="lightbox-content" id="lightboxContent">
+            <img src="" alt="" id="lightboxImage">
+        </div>
+        <div class="lightbox-nav">
+            <button id="lightboxPrev">←</button>
+            <button id="lightboxNext">→</button>
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter">1/200</div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 ArtGallery. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Sample image data - in a real app, this would come from an API
+        const images = [
+            { id: 1, url: 'https://via.placeholder.com/600x800/ff7f7f/333333?text=Art+1', title: 'Fantasy Landscape', views: 1250, likes: 320 },
+            { id: 2, url: 'https://via.placeholder.com/600x800/7fff7f/333333?text=Art+2', title: 'Character Design', views: 980, likes: 275 },
+            { id: 3, url: 'https://via.placeholder.com/600x800/7f7fff/333333?text=Art+3', title: 'Colorful Portrait', views: 1540, likes: 420 },
+            { id: 4, url: 'https://via.placeholder.com/600x800/ffff7f/333333?text=Art+4', title: 'Magical Scene', views: 870, likes: 210 },
+            { id: 5, url: 'https://via.placeholder.com/600x800/ff7fff/333333?text=Art+5', title: 'Digital Sketch', views: 1120, likes: 305 },
+            { id: 6, url: 'https://via.placeholder.com/600x800/7fffff/333333?text=Art+6', title: 'Anime Style', views: 1350, likes: 380 },
+            { id: 7, url: 'https://via.placeholder.com/600x800/ffbf7f/333333?text=Art+7', title: 'Concept Art', views: 920, likes: 250 },
+            { id: 8, url: 'https://via.placeholder.com/600x800/7fbf7f/333333?text=Art+8', title: 'Illustration', views: 1080, likes: 290 },
+            { id: 9, url: 'https://via.placeholder.com/600x800/7f7fbf/333333?text=Art+9', title: 'Fan Art', views: 1420, likes: 410 },
+            { id: 10, url: 'https://via.placeholder.com/600x800/bfbf7f/333333?text=Art+10', title: 'Digital Painting', views: 760, likes: 180 },
+            { id: 11, url: 'https://via.placeholder.com/600x800/bf7fbf/333333?text=Art+11', title: 'Fantasy Creature', views: 1150, likes: 330 },
+            { id: 12, url: 'https://via.placeholder.com/600x800/7fbfbf/333333?text=Art+12', title: 'Character Sheet', views: 890, likes: 240 },
+        ];
+        
+        // Current image index for lightbox
+        let currentImageIndex = 0;
+        
+        // Initialize the gallery
+        function initGallery() {
+            const gallery = document.getElementById('gallery');
+            
+            images.forEach((image, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.dataset.index = index;
+                
+                galleryItem.innerHTML = `
+                    <img src="${image.url}" alt="${image.title}" loading="lazy">
+                    <div class="gallery-item-info">
+                        <div>${image.title}</div>
+                        <div>${image.views} views • ${image.likes} likes</div>
+                    </div>
+                `;
+                
+                galleryItem.addEventListener('click', () => openLightbox(index));
+                gallery.appendChild(galleryItem);
+            });
+        }
+        
+        // Open lightbox with selected image
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+            
+            lightboxImage.src = images[index].url;
+            lightboxImage.alt = images[index].title;
+            lightboxCounter.textContent = `${index + 1}/${images.length}`;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close lightbox
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Navigate between images in lightbox
+        function navigateLightbox(direction) {
+            if (direction === 'prev') {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            } else {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            }
+            openLightbox(currentImageIndex);
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            initGallery();
+            
+            document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+            document.getElementById('lightboxPrev').addEventListener('click', () => navigateLightbox('prev'));
+            document.getElementById('lightboxNext').addEventListener('click', () => navigateLightbox('next'));
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                const lightbox = document.getElementById('lightbox');
+                if (lightbox.style.display === 'flex') {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                    } else if (e.key === 'ArrowLeft') {
+                        navigateLightbox('prev');
+                    } else if (e.key === 'ArrowRight') {
+                        navigateLightbox('next');
+                    }
+                }
+            });
+            
+            // Close lightbox when clicking outside image
+            document.getElementById('lightbox').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('lightbox')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
 </html>

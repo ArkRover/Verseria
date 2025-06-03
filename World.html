@@ -1,129 +1,589 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapture Classes</title>
-    <link rel="stylesheet" href="WoStyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Versaria - World</title>
+  <link rel="icon" type="image/x-icon" href="Versaria.library\images\M90GC4HWEMN6J.info\encrypted-tbn0.png">
+  <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #000;
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    .header {
+      text-align: center;
+      padding: 32px;
+    }
+
+    .row {
+      display: -ms-flexbox; /* IE 10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE 10 */
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+
+    /* Create four equal columns */
+    .column {
+      -ms-flex: 25%; /* IE 10 */
+      flex: 25%;
+      padding: 0 4px;
+    }
+
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+      width: 100%;
+    }
+
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            height: 40px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #4bf051;
+        }
+        
+        .download-btn {
+            background-color: #f0c14b;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #d7ab3a;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('https://zenless.hoyoverse.com/en-us/_nuxt/img/bg.7b4d3f7.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .trailer-btn {
+            background-color: transparent;
+            color: #fff;
+            padding: 12px 25px;
+            border: 2px solid #fff;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .trailer-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Video Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            width: 80%;
+            max-width: 1200px;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Characters Section */
+        .characters {
+            padding: 80px 40px;
+            background-color: #111;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .character-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 350px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .character-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .character-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .character-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .character-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+        }
+        
+        .character-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .character-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #f0c14b;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+        }
+        
+        .copyright {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .logo {
+                height: 30px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .characters-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        * {box-sizing: border-box}
+
+    /* Container needed to position the overlay. Adjust the width as needed */
+    .container {
+      position: relative;
+
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* The overlay effect - lays on top of the container and over the image */
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      background: rgb(0, 0, 0);
+      background: rgba(0, 0, 0, 0.5); /* Black see-through */
+      color: #f1f1f1;
+      width: 100%;
+      transition: .5s ease;
+      opacity:0;
+      color: white;
+      font-size: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* When you mouse over the container, fade in the overlay title */
+    .container:hover .overlay {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
-    <div class="topnav">
-        <a href="http://127.0.0.1:5500/index.html">Home</a>
-        <a href="http://127.0.0.1:5500/Character.html">Characters</a>
-        <a href="#species">Species</a>
-        <a href="#factions">Factions</a>
-        <a class="active" href="http://127.0.0.1:5500/World.html">Locations</a>
-        <a href="#skills">Skills</a>
-        <a href="#weapons">Weapons</a>
-        <a href="http://127.0.0.1:5500/History.html">History</a>
-        <a href="http://127.0.0.1:5500/Mechanics.html">Mechanics</a>
-        <a href="http://127.0.0.1:5500/Hex.html">Hex</a>
-    </div>
+  <header>
+    <img src="Versaria.library\images\M90GC4HWEMN6J.info\encrypted-tbn0.png" alt="Monster Logo" class="logo">
+    <nav>
+        <ul>
+            <li><a href="http://127.0.0.1:5500/index.html">Home</a></li>
+            <li><a href="#">Characters</a></li>
+            <li><a href="http://127.0.0.1:5500/Creature.html">Creatures</a></li>
+            <li><a href="#">Player-Customization</a></li>
+            <li><a href="http://127.0.0.1:5500/World.html">World</a></li>
+            <li><a href="#">Lore</a></li>
+            <li><a href="http://127.0.0.1:5500/Mechanics.html">Mechanics</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div class="rapture-container image-left">
-        <img src="Versaria.library\images\M6BZYKBSQ6X8E.info\Valkora.jpg" alt="Valkora" class="rapture-image">
-        <div class="rapture-card">
-            <div class="rapture-class">VALKORA</div>
-            <div class="weakness">
-                <span class="weakness-title">Description:</span>
-            </div>
-            <div class="description">
-                Located in a desert Valkora is a large city used by travellers as a resting place when crossing the great Dunes. It 
-                has now became a capital city.
-            </div>
-        </div>
-    </div>
+<!-- Header -->
+<div class="header">
+  <h1><br></h1>
+</div>
 
-    <!-- Second card - image right -->
-    <div class="rapture-container image-right">
-        <img src="Versaria.library\images\M81X1HQGFN11T.info\58e79a8b7d2d416ff629f0e50c02d8f0.jpg" alt="PLATE" class="rapture-image">
-        <div class="rapture-card">
-            <div class="rapture-class">LORD CLASS: PLATE</div>
-            <div class="weakness">
-                <span class="weakness-title">Description:</span>
-            </div>
-            <div class="description">
-                An air-type Rapture wrapped in layers of energy shields.
-                To shatter the shield, multiple attacks are more effective than a single powerful strike.
-            </div>
-        </div>
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+    <div class="container">
+      <img src="Versaria.library\images\M915QL4F5N5OQ.info\8d2aeb741a46dbb21a3d72d7f98852df.png" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
     </div>
+    <div class="container">
+      <img src="Versaria.library\images\M915LYYBANDVT.info\dcd484z-3dac51f3-0a5a-4dab-8d39-c4dcce0b6ad7.png" alt="Avatar" class="image">
+      <div class="overlay">Name?</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M915LGS2P9674.info\athlastur_forest_by_piotrdura_db4224c-fullview.jpg" alt="Avatar" class="image">
+      <div class="overlay">World tree</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M915QRFM700JY.info\28e4d3dabc7a6e1060679a54ccdac632.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M915QJ9OGB4AF.info\a8290784d78844a53d6cc7a8b905be1c.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M915P9LSEK8Z7.info\0ef2973ce53649371db4fb0c196cede0.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M8LZX2XKM9MPU.info\HD-wallpaper-fantasy-landscape.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WEP5LUQFFR.info\245da9f8c8817cb45a4c14e2e0d88e3f.png" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WK9WM56S8T.info\fd5cc3790c90f5080f5b5ad5c3c49cb2.png" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+  </div>
 
-    <!-- Third card - image left -->
-    <div class="rapture-container image-left">
-        <img src="Versaria.library\images\M81UZF3S1FUW2.info\Valkora.jpg" alt="STORM BRINGER" class="rapture-image">
-        <div class="rapture-card">
-            <div class="rapture-class">TYRANT CLASS: STORM BRINGER</div>
-            <div class="weakness">
-                <span class="weakness-title">Description:</span>
-            </div>
-            <div class="description">
-                A thunderbird that rules the sky.
-                It has the ability to manipulate lightning and burn everything.
-            </div>
-        </div>
+  <div class="column">
+    <div class="container">
+      <img src="Versaria.library\images\M8LZX2XK5AGSI.info\HD-wallpaper-fantasy-landscape-colorful-scenic-trees-fantasy.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
     </div>
-
-    <!-- Fourth card - image right -->
-    <div class="rapture-container image-right">
-        <img src="Versaria.library\images\M81WK9WM56S8T.info\fd5cc3790c90f5080f5b5ad5c3c49cb2.png" alt="REBUILD ARMSTRONG" class="rapture-image">
-        <div class="rapture-card">
-            <div class="rapture-class">LORD CLASS: REBUILD ARMSTRONG</div>
-            <div class="weakness">
-                <span class="weakness-title">Description:</span>
-            </div>
-            <div class="description">
-                A massive Rapture with numerous arms.
-                If not interrupted at the right moment, it will launch an overwhelming attack.
-            </div>
-        </div>
+    <div class="container">
+      <img src="Versaria.library\images\M8LZWOB0LVJUS.info\HD-wallpaper-fantasy-castle-moon-dark-clouds-bridge-fantasy.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
     </div>
-
-    <!-- Fifth card - image left -->
-    <div class="rapture-container image-left">
-        <img src="Versaria.library\images\M81WK3JVQ7XJA.info\7d28ccffe8ef14d6cee594e13361047b.jpg" alt="MUDERNIA" class="rapture-image">
-        <div class="rapture-card">
-            <div class="rapture-class">TYRANT CLASS: MUDERNIA</div>
-            <div class="weakness">
-                <span class="weakness-title">Description:</span>
-            </div>
-            <div class="description">
-                One of the liberties, the Queen's elite.
-                The threatening particle cannon she wields is powered by the core, so destroying the core should be prioritized.
-            </div>
-        </div>
+    <div class="container">
+      <img src="Versaria.library\images\M6BZYKBSQ6X8E.info\Valkora.jpg" alt="Avatar" class="image">
+      <div class="overlay">Valkora</div>
     </div>
-
-    <!-- image right -->
-    <div class="rapture-container image-right">
-        <img src="Versaria.library\images\M81WVZAUWMNFO.info\31d2ec07edafb1916e5dab838cec8dad.jpg" alt="Tartarus" class="rapture-image">
-        <div class="rapture-card">
-            <div class="rapture-class">TARTARUS</div>
-            <div class="weakness">
-                <span class="weakness-title">Description:</span>
-            </div>
-            <div class="description">
-                A strong hold. ------------------------------------------------------------------------------------------------------
-            </div>
-        </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81X1HQGFN11T.info\58e79a8b7d2d416ff629f0e50c02d8f0.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
     </div>
-
-    <!-- image left -->
-    <div class="rapture-container image-left">
-        <img src="Versaria.library\images\M81WQWWYMLRDU.info\d1af6e4ca71dce71503e1afc3e03660d.jpg" alt="Maruna" class="rapture-image">
-        <div class="rapture-card">
-            <div class="rapture-class">MARUNA</div>
-            <div class="weakness">
-                <span class="weakness-title">Description:</span>
-            </div>
-            <div class="description">
-                Named after a giant that once stood here to stop the demons advance into human land.
-            </div>
-        </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WW8O9WT56W.info\3617aa4db4e5001e0306b8bd735fef16.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
     </div>
-
-    <div class="copyright">
-        ©REVERY STUDIO.
+    <div class="container">
+      <img src="Versaria.library\images\M81WW2KFPEZ25.info\3c26d2a6feea7be34356e662b9b6b7bf.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
     </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WVZAUWMNFO.info\31d2ec07edafb1916e5dab838cec8dad.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+  </div>  
+  <div class="column">
+    <div class="container">
+      <img src="Versaria.library\images\M81WUTQ7A79L6.info\78b44da668ffce5fb9a2f7addc9a43e2.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WRVOSYOJOW.info\b41f3681f0723948e8247c525620e5d3.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WREVUPLDX9.info\6c08f106a64b07e308f1645d1fcb006d.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WRALHVHJ1P.info\734cfcfa0ee3f18bf268d2d1d73fb989.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WQWWYMLRDU.info\d1af6e4ca71dce71503e1afc3e03660d.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WQTTGCKT3S.info\446c05620278f8c65d621622b14f40b0.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WQO53709CT.info\537425989c556213bb2357d1c136b590.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="container">
+      <img src="Versaria.library\images\M81WQKNZ2AKDO.info\77da875c2330253d47162872db7fcb1a.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WQGEK5X9EG.info\e6cf3feea1957da616f5cb006ffc9564.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WQB50TJ3J0.info\627eb6c2469025fe05ca2236efc9f535.png" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WQ88E8CBDE.info\7aaaea0f481ee37167647dd28db54b92.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WO4QQO8KM3.info\7c37e338b7bcb5113cb4b0d78042ccea.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81WLR5EY1WCA.info\b0d0e5ef1eec681cefabf80b32c34bc1.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M81UZF3S1FUW2.info\Valkora.jpg" alt="Avatar" class="image">
+      <div class="overlay">Name??</div>
+    </div>
+    <div class="container">
+      <img src="Versaria.library\images\M91OWXFS0TZPW.info\4ff93d7867ffa10da241e6405a74f6cd.jpg" alt="Avatar" class="image">
+      <div class="overlay">Swamp</div>
+    </div>
+  </div>
+</div>
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+        
+                // Only prevent default for same-page anchors
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                // Otherwise, allow normal navigation
+            });
+        });
+    </script>
 </body>
 </html>
