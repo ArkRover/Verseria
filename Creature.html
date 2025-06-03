@@ -8,6 +8,54 @@
     <link rel="icon" type="image/x-icon" href="Versaria.library/images/M90GC4HWEMN6J.info/encrypted-tbn0.png">
     <link rel="stylesheet" href="CrStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles for better information layout */
+        .modal-info-section {
+            margin-bottom: 1.5rem;
+        }
+        .modal-info-section h3 {
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .creature-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .stat-box {
+            background: rgba(0,0,0,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        .ability {
+            margin-bottom: 1rem;
+            background: rgba(0,0,0,0.1);
+            padding: 0.8rem;
+            border-radius: 4px;
+        }
+        .ability-name {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        .tags-container {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #4a4a4a;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        .character-image {
+            object-fit: cover; /* Ensures the image fills the container */
+            object-position: top; /* Aligns the image to the top */
+            border-radius: 8px 8px 0 0; /* Optional: Rounded corners at the top */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -38,8 +86,6 @@
     </div>
 
     <main class="main-container">
-        <!-- Rest of your existing content -->
-        
         <div class="filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="faction1">Human</button>
@@ -57,35 +103,83 @@
         <div class="character-grid">
             <!-- Character cards will be added here by JavaScript -->
         </div>
-    </div>
     
-    <div class="character-modal">
-        <div class="close-modal">&times;</div>
-        <div class="modal-content">
-            <img src="" alt="Character Full Image" class="modal-image">
-            <div class="modal-info">
-                <h2 class="modal-name">Character Name</h2>
-                <p class="modal-faction">Faction Name</p>
-                <p class="modal-description">Character description will appear here with detailed background information and story.</p>
-                
-                <div class="modal-abilities">
-                    <h3>Abilities</h3>
-                    <div class="ability">
-                        <div class="ability-name">Basic Attack</div>
-                        <div class="ability-desc">Performs up to 4 consecutive attacks.</div>
+        <div class="character-modal">
+            <div class="close-modal">&times;</div>
+            <div class="modal-content">
+                <img src="" alt="Character Full Image" class="modal-image">
+                <div class="modal-info">
+                    <h2 class="modal-name">Character Name</h2>
+                    <p class="modal-faction">Faction Name</p>
+                    
+                    <div class="creature-stats">
+                        <div class="stat-box">
+                            <strong>Habitat:</strong> <span class="habitat">Forests, Mountains</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong>Diet:</strong> <span class="diet">Carnivorous</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong>Size:</strong> <span class="size">Medium</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong>Threat Level:</strong> <span class="threat">High</span>
+                        </div>
                     </div>
-                    <div class="ability">
-                        <div class="ability-name">Special Skill</div>
-                        <div class="ability-desc">Unleashes a powerful elemental attack.</div>
+                    
+                    <div class="tags-container">
+                        <span class="tag">Speed</span>
+                        <span class="tag">Damage</span>
+                        <span class="tag">Aerial</span>
                     </div>
-                    <div class="ability">
-                        <div class="ability-name">Ultimate</div>
-                        <div class="ability-desc">Deals massive AoE damage to all enemies.</div>
+                    
+                    <div class="modal-info-section">
+                        <h3>Description</h3>
+                        <p class="modal-description">Character description will appear here with detailed background information and story.</p>
+                    </div>
+                    
+                    <div class="modal-info-section">
+                        <h3>Behavior & Society</h3>
+                        <p class="modal-behavior">Details about the creature's social structure and typical behavior patterns.</p>
+                    </div>
+                    
+                    <div class="modal-abilities">
+                        <h3>Abilities</h3>
+                        <div class="ability">
+                            <div class="ability-name">Basic Attack</div>
+                            <div class="ability-desc">Performs up to 4 consecutive attacks.</div>
+                        </div>
+                        <div class="ability">
+                            <div class="ability-name">Special Skill</div>
+                            <div class="ability-desc">Unleashes a powerful elemental attack.</div>
+                        </div>
+                        <div class="ability">
+                            <div class="ability-name">Ultimate</div>
+                            <div class="ability-desc">Deals massive AoE damage to all enemies.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-info-section">
+                        <h3>Weaknesses</h3>
+                        <ul class="weaknesses-list">
+                            <li>Vulnerable to ice attacks</li>
+                            <li>Susceptible to loud noises</li>
+                            <li>Poor night vision</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-info-section">
+                        <h3>Variants</h3>
+                        <ul class="variants-list">
+                            <li><strong>Storm Harpies:</strong> Darker plumage with wind gust abilities</li>
+                            <li><strong>Jungle Harpies:</strong> Smaller with poison-coated talons</li>
+                            <li><strong>Royal Harpies:</strong> Larger with iridescent feathers</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer class="site-footer">
         <div class="footer-content">
@@ -100,7 +194,7 @@
     </footer>
     
     <script>
-        // Character data
+        // Character data with expanded information
         const characters = [
             {
                 id: 1,
@@ -108,699 +202,233 @@
                 faction: "Human",
                 image: "Versaria.library/images/M8Z0178E740KY.info/e4478e7cfb32d357aacb118f652727f1.jpg",
                 fullImage: "Versaria.library/images/M8Z0178E740KY.info/e4478e7cfb32d357aacb118f652727f1.jpg",
-                description: "A humanoid bird normally found in big forests. It is brightly coloured with giant wings used to fly at high speeds.",
-                tags: ["Speed", "Damage"],
+                description: "Harpies are humanoid birds commonly found in dense forests, towering cliffs, and mountainous regions. They possess brightly coloured plumage, often in vibrant shades of red, blue, green, or gold, which helps them blend into tropical canopies or intimidate rivals. Their large, powerful wings allow them to fly at incredible speeds, making them formidable hunters and agile aerial combatants.",
+                behavior: "Harpies are highly territorial and often form matriarchal tribes led by the strongest female. They communicate through a mix of screeches, clicks, and melodic calls. While many harpies are aggressive and see other creatures as prey or threats, some rare tribes have been known to trade other races.",
+                habitat: "Forests, Mountains, Cliffs",
+                diet: "Carnivorous (occasionally fruits/nuts)",
+                size: "Medium",
+                threat: "High",
+                tags: ["Matriarchal", "Territorial"],
                 abilities: [
-                    { name: "Falcon punch", desc: "The harpy dives moving at a high speed and balls up its fish to strike the target at this incredible speed." },
-                    { name: "Wing drill", desc: "The harpy covers itself with its wings while flying making a drill shape to strike the target, this also protects the body from fire since the wings are resistant to fire." },
-                    { name: "Wing bash", desc: "The harpy bashes the target with its wings." }
+                    { 
+                        name: "Falcon Punch", 
+                        desc: "The harpy tucks its wings tight against its body and plummets in a steep dive, curling its powerful talons into a balled-up fist-like shape. Just before impact, it snaps its legs forward, striking with the full force of its descent. The attack's power scales with the height of the dive—higher drops mean more destructive force." 
+                    },
+                    { 
+                        name: "Wing Drill", 
+                        desc: "The harpy wraps its wings tightly around its body, forming a spinning drill-like shape as it spirals toward its target. This attack not only deals piercing damage but also deflects incoming fire-based attacks due to the harpy's naturally fire-resistant feathers." 
+                    },
+                    { 
+                        name: "Screech Sonic", 
+                        desc: "The harpy lets out an ear-piercing shriek that disorients enemies, causing temporary deafness or confusion. Those too close may suffer ruptured eardrums or even fall unconscious if the sound is powerful enough." 
+                    },
+                    {
+                        name: "Stomp Out",
+                        desc: "Whether grounded or mid-flight, the harpy delivers a relentless barrage of rapid kicks with its razor-sharp talons. This flurry of strikes can overwhelm opponents, leaving deep gashes or even knocking them prone."
+                    },
+                    {
+                        name: "Screech Sonic",
+                        desc: "The harpy lets out an ear-piercing shriek that disorients enemies, causing temporary deafness or confusion. Those too close may suffer ruptured eardrums or even fall unconscious if the sound is powerful enough."
+                    },
+                    {
+                        name: "Talon Toss",
+                        desc: "The harpy snatches a target with its claws, lifts them into the air, and hurls them toward the ground or another enemy. Smaller creatures may be carried away entirely, dropped from lethal heights."
+                    }
+                ],
+                weaknesses: [
+                    "Vulnerable to Ice & Lightning",
+                    "Prideful Nature - often underestimates grounded foes",
+                    "Susceptible to loud noises and sonic attacks"
+                ],
+                variants: [
+                    "Storm Harpies: Darker plumage that generate minor wind gusts",
+                    "Jungle Harpies: Smaller but more agile, using poison-coated talons",
+                    "Royal Harpies: Larger, with iridescent feathers and enhanced intelligence"
                 ]
             },
             {
                 id: 2,
-                name: "Jorogumo",
-                faction: "Aracnid",
-                image: "Versaria.library/images/M81T2X1ORYVRS.info/WhatsApp Image 2025-03-09 at 17.45.44_1c5037fc.jpg",
-                fullImage: "Versaria.library/images/M81T2X1ORYVRS.info/WhatsApp Image 2025-03-09 at 17.45.44_1c5037fc.jpg",
-                description: "",
-                tags: ["Defence", "Damage"],
+                name: "Succubus",
+                faction: "Demon",
+                image: "Versaria.library/images/MBGOVV42VAVRU.info/fbgt.webp",
+                fullImage: "Versaria.library/images/MBGOVV42VAVRU.info/fbgt.webp",
+                description: "Born of the Abyss, these lesser demons escaped infernal realms to survive by feeding on mortal lust. Shapeshifting predators who can match their prey's deepest desires, though their true form features curling horns, slitted pupils, and smooth skin.",
+                behavior: "Organize under powerful Arch-Succubi in pleasure-palaces. Carve demonic hexes into their flesh for dark powers. Suffer eternal hunger that drives them feral if unfed.",
+                habitat: "Cursed cities, shadowed places near human settlements",
+                diet: "Sexual energy/life force (rarely sustained by pure love)",
+                size: "Humanoid (shape varies)",
+                threat: "Extreme - soul corruption and physical entrapment",
+                tags: ["Seduction", "Soul-Theft", "Shapeshifter"],
                 abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
+                    { 
+                        "name": "Dream-Walking", 
+                        "desc": "Visit sleepers to feed without leaving physical traces" 
+                    },
+                    { 
+                        "name": "Soul-Theft", 
+                        "desc": "Bind a soul to create an addicted thrall through prolonged feeding" 
+                    },
+                    { 
+                        "name": "Shadow-Meld", 
+                        "desc": "Move through darkness like living smoke" 
+                    },
+                    {
+                        "name": "Memory theft", 
+                        "desc": "" 
+                    },
+                    {
+                        "name": "Irresistible voice", 
+                        "desc": "" 
+                    },
+                    {
+                        "name": "Drain", 
+                        "desc": "" 
+                    },
+                    { 
+                        "name": "Demonic Hexes", 
+                        "desc": "Tattoo-like flesh carvings grant powers to succubi but are curses to other beings." 
+                    }
+                ],
+                weaknesses: [
+                    "Silver & salt burn their skin; salt circles trap them",
+                    "True names can bind or banish them",
+                    "Holy vows of celibacy make mortals invisible to them",
+                    "Wither into ash husks without feeding"
+                ],
+                variants: [
+                    "Husk: Starved succubi reduced to emaciated ash-covered wraiths",
+                    "Arch-Succubus: Ancient demons who rule pleasure-courts with multiple bound thralls"
                 ]
             },
             {
                 id: 3,
-                name: "Lamia",
+                name: "Cyclops",
                 faction: "Demon",
-                image: "Versaria.library/images/M8TZ2AVEZTEYN.info/dalamadur_by_muhut_dh0xood-fullview.jpg",
-                fullImage: "Versaria.library/images/M8TZ2AVEZTEYN.info/dalamadur_by_muhut_dh0xood-fullview.jpg",
-                description: "",
-                tags: ["Defence", "Health"],
+                image: "Versaria.library/images/M91OV2RWL7FEH.info/5b4156bf0548f84439d77c8a8422662b.jpg",
+                fullImage: "Versaria.library/images/M91OV2RWL7FEH.info/5b4156bf0548f84439d77c8a8422662b.jpg",
+                description: "A towering infernal brute standing 15 meters tall, its cracked volcanic hide pulsing with cursed runes. A single bloodshot eye dominates its face, glowing with malevolent intelligence that can shatter mortal minds.",
+                behavior: "Roams wastelands collecting trophies from fallen foes. Either serves dark gods or demands sacrificial tributes from terrified settlements.",
+                habitat: "Hellish dimensions, volcanic ruins, battlefields",
+                diet: "Flesh of mortals/devoured souls (often ritualistic)",
+                size: "15m (50ft) tall",
+                threat: "Cataclysmic - destroys fortifications and armies single-handedly",
+                tags: ["Siegebreaker", "Terror", "Infernal"],
                 abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
+                    { 
+                        "name": "Unholy Strength", 
+                        "desc": "Rips apart stone fortifications, hurls boulders as projectiles, crushes war machines bare-handed" 
+                    },
+                    { 
+                        "name": "Malevolent Gaze", 
+                        "desc": "Eye induces petrification, madness, or soul-draining depending on variant (yellow/red/green glow)" 
+                    },
+                    { 
+                        "name": "Infernal Regeneration", 
+                        "desc": "Wounds close rapidly unless caused by blessed/enchanted weapons" 
+                    },
+                    { 
+                        "name": "Aura of Dread", 
+                        "desc": "Lesser creatures within 1km must resist paralysis or flee in terror" 
+                    },
+                    { 
+                        "name": "Voice resonates", 
+                        "desc": "" 
+                    }
+                ],
+                weaknesses: [
+                    "The eye is vulnerable—blinding it causes agony and disrupts magic",
+                    "Bound by ancient divine rituals (oaths, artifact chains)",
+                    "Cursed runes on its body can be exploited for banishing"
+                ],
+                variants: [
+                        "Rune-Carved: Tattoos grant fire breath/necromancy (glowing red eye)",
+                        "Horned Tyrant: Adorns horns with victims' skulls (green eye induces plague)",
+                        "Molten Maw:"
+                ],
             },
             {
                 id: 4,
-                name: "Dragonkin",
-                faction: "Dragon",
-                image: "Versaria.library/images/M8TZT8COPIT7N.info/nergigante_humanization_by_muhut_dc4g6vm-fullview.jpg",
-                fullImage: "Versaria.library/images/M8TZT8COPIT7N.info/nergigante_humanization_by_muhut_dc4g6vm-fullview.jpg",
-                description: "",
-                tags: ["Defence", "Damage"],
+                name: "Magridar",
+                faction: "Human",
+                image: "Versaria.library/images/M915PD7GN213K.info/27e356ea185fa327dcaaba7e52f01bb2.jpg",
+                fullImage: "Versaria.library/images/M915PD7GN213K.info/27e356ea185fa327dcaaba7e52f01bb2.jpg",
+                description: "Towering philosopher-giants who dwell atop remote peaks, observing the cosmos with patience. Their bluish-white skin resists extremes of nature, and their words carry the weight of centuries.",
+                behavior: "Contemplative and deliberate; values silence as much as speech. Rarely aggressive but fiercely protective of sacred sites and offspring.",
+                habitat: "Mountain plateaus, stone monoliths, celestial observatories",
+                diet: "Carnivorous",
+                size: "10–15m (30–50ft) tall",
+                threat: "Low (unless provoked, then catastrophic)",
+                tags: ["Wise", "Resilient", "Celestial"],
                 abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
+                    { 
+                        "name": "Regenerative Healing", 
+                        "desc": "Limbs regrow over years; scars become narrative symbols" 
+                    },
+                    { 
+                        "name": "Elemental Resistance", 
+                        "desc": "Immune to temperature extremes, highly resistant to physical trauma" 
+                    },
+                    { 
+                        "name": "Celestial Divination", 
+                        "desc": "Reads stars for prophecies (rarely shared with outsiders)" 
+                    },
+                    { 
+                        "name": "Silent Discourse", 
+                        "desc": "Can communicate complex ideas through pauses and gestures" 
+                    }
+                ],
+                weaknesses: [
+                    "Slow reproduction (2 children per lifetime = cultural vulnerability)",
+                    "Reliant on sacred sites—displacement weakens their connection to knowledge",
+                    "Overdeliberation: Struggles to react swiftly to sudden threats"
+                ],
+                variants: [
+                    "Star-Painted: Elders with constellations tattooed in luminous ink; act as historians",
+                    "White Warrior: Face-painted defenders; regenerative abilities triple in combat",
+                    "Echo Chanter=: Masters of resonant harmonics; use voice to shape ice/stone"
+                ],
             },
             {
                 id: 5,
-                name: "Myconid",
-                faction: "Pathogen",
-                image: "Versaria.library/images/M66C1UOXUGH4Q.info/370047afeec6c37e226a1a697a702a01.jpg",
-                fullImage: "Versaria.library/images/M66C1UOXUGH4Q.info/370047afeec6c37e226a1a697a702a01.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 6,
-                name: "Squigal",
+                name: "Sura",
                 faction: "Human",
-                image: "Versaria.library/images/M65IGV8GDL78Q.info/octopus-with-a-weapon-original-v0-q53920hjxltd1.jpg",
-                fullImage: "Versaria.library/images/M65IGV8GDL78Q.info/octopus-with-a-weapon-original-v0-q53920hjxltd1.jpg",
-                description: "",
-                tags: ["", ""],
+                image: "Versaria.library/images/M8TZU4PJVHI5X.info/dc1iona-661a5edf-f83a-436b-a000-fb8b6736fb45.jpg",
+                fullImage: "Versaria.library/images/M8TZU4PJVHI5X.info/dc1iona-661a5edf-f83a-436b-a000-fb8b6736fb45.jpg",
+                description: "Ageless dark-skinned warriors who transition from male to revered feminine elders at 50. Their society blends martial discipline with spiritual rebirth, governed by a sacred life cycle of strength and wisdom.",
+                behavior: "Communal and duty-bound. Adults serve as protectors; elders guide through ancestral wisdom. Highly ritualistic.",
+                habitat: "Fortified mountain monasteries, sunlit temples",
+                diet: "Carnivorous",
+                size: "1.8–2.1m (6–7ft) tall",
+                threat: "Moderate (individually) / Extreme (in phalanx formations)",
+                tags: ["Transformative", "Sacred Warriors", "Ancestor-Worship"],
                 abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 7,
-                name: "Kadachi",
-                faction: "Dragon",
-                image: "Versaria.library/images/M84PZGXZIVPZ9.info/3a6badefd51fb8d4bbac79f5baf141e6.jpg",
-                fullImage: "Versaria.library/images/M84PZGXZIVPZ9.info/3a6badefd51fb8d4bbac79f5baf141e6.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 8,
-                name: "Malken",
-                faction: "Human",
-                image: "Versaria.library/images/M84PYY93RN2XL.info/bb7e9fb351f38dbe75f5023a08a3f6a1.jpg",
-                fullImage: "Versaria.library/images/M84PYY93RN2XL.info/bb7e9fb351f38dbe75f5023a08a3f6a1.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 9,
-                name: "Ghoul",
-                faction: "Undead",
-                image: "Versaria.library/images/M84PZGY00GNYL.info/a08ab06d251e910a7254a94cb6aa2c7c.jpg",
-                fullImage: "Versaria.library/images/M84PZGY00GNYL.info/a08ab06d251e910a7254a94cb6aa2c7c.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 10,
-                name: "Earth dragon",
-                faction: "Dragon",
-                image: "Versaria.library/images/M66BSGPJKXXD8.info/67861426f9691c509dc13a695f54a592.jpg",
-                fullImage: "Versaria.library/images/M66BSGPJKXXD8.info/67861426f9691c509dc13a695f54a592.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 11,
-                name: "Thunder spirit",
-                faction: "Spirit",
-                image: "Versaria.library/images/M6694RCYLO0DP.info/d094b95c8244347a824878f06e76ccf9.jpg",
-                fullImage: "Versaria.library/images/M6694RCYLO0DP.info/d094b95c8244347a824878f06e76ccf9.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 12,
-                name: "Water spirit",
-                faction: "Spirit",
-                image: "Versaria.library/images/M6694V0TT15UC.info/7fe77fc12e3b6e37300a6351c4845835.jpg",
-                fullImage: "Versaria.library/images/M6694V0TT15UC.info/7fe77fc12e3b6e37300a6351c4845835.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 13,
-                name: "Succubus",
-                faction: "Demon",
-                image: "Versaria.library/images/M66BWASAMR2WY.info/fe3076f8777b675259cb19329ade1e1f.jpg",
-                fullImage: "Versaria.library/images/M66BWASAMR2WY.info/fe3076f8777b675259cb19329ade1e1f.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 14,
-                name: "Elven",
-                faction: "Human",
-                image: "Versaria.library/images/M66BW8JBYU7YH.info/1b0b5eb8109e3260f3fe8d47e6e55eba.jpg",
-                fullImage: "Versaria.library/images/M66BW8JBYU7YH.info/1b0b5eb8109e3260f3fe8d47e6e55eba.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 15,
-                name: "Wind spirit",
-                faction: "Spirit",
-                image: "Versaria.library/images/M6691WRWRX46N.info/e2f18511fb788811dd9f334b52d281dc.jpg",
-                fullImage: "Versaria.library/images/M6691WRWRX46N.info/e2f18511fb788811dd9f334b52d281dc.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 16,
-                name: "Abyssal dragon",
-                faction: "Dragon",
-                image: "Versaria.library/images/M668SAO15UR8G.info/c9f73ad9fbf8fc302e8c4c63170a9a7f.jpg",
-                fullImage: "Versaria.library/images/M668SAO15UR8G.info/c9f73ad9fbf8fc302e8c4c63170a9a7f.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 17,
-                name: "Corpse golem",
-                faction: "Undead",
-                image: "Versaria.library/images/M66BYXCERUNOD.info/eede98be1a04fa4d235759ac696ba01d.jpg",
-                fullImage: "Versaria.library/images/M66BYXCERUNOD.info/eede98be1a04fa4d235759ac696ba01d.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 18,
-                name: "Island crab",
-                faction: "Colossus",
-                image: "Versaria.library/images/M66BXCMQC78ZR.info/98f0cc4fbe9a2fbfffa9eb341dfd9bf9.png",
-                fullImage: "Versaria.library/images/M66BXCMQC78ZR.info/98f0cc4fbe9a2fbfffa9eb341dfd9bf9.png",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 19,
-                name: "Lizardmen",
-                faction: "Others",
-                image: "Versaria.library/images/M66BKW3XPHJS3.info/238306e52bc7f60ae40f0464102c593d.jpg",
-                fullImage: "Versaria.library/images/M66BKW3XPHJS3.info/238306e52bc7f60ae40f0464102c593d.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 20,
-                name: "Flemin",
-                faction: "Human",
-                image: "Versaria.library/images/M66BKY38QRDIS.info/3bdd3b204658e31865514d64af615d61.jpg",
-                fullImage: "Versaria.library/images/M66BKY38QRDIS.info/3bdd3b204658e31865514d64af615d61.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 21,
-                name: "Orc",
-                faction: "Others",
-                image: "Versaria.library/images/M66C0LGXUQ51R.info/f3c92904579996c4b2bead79e956d5bf.jpg",
-                fullImage: "Versaria.library/images/M66C0LGXUQ51R.info/f3c92904579996c4b2bead79e956d5bf.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 22,
-                name: "Snake parasite",
-                faction: "Undead",
-                image: "Versaria.library/images/M66C012MSUR05.info/2aa09669df6e2dae99d1bd4630fcd709.jpg",
-                fullImage: "Versaria.library/images/M66C012MSUR05.info/2aa09669df6e2dae99d1bd4630fcd709.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 23,
-                name: "Weeping willow",
-                faction: "Pathogen",
-                image: "Versaria.library/images/M66C2BIYIRB4B.info/7081479b10a926a7adab198f3f6e06b5.jpg",
-                fullImage: "Versaria.library/images/M66C2BIYIRB4B.info/7081479b10a926a7adab198f3f6e06b5.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 24,
-                name: "Ceberus",
-                faction: "Demon",
-                image: "Versaria.library/images/M668UD0X0BPDA.info/5c124aa862ad1eb21d6a55564326bb10.jpg",
-                fullImage: "Versaria.library/images/M668UD0X0BPDA.info/5c124aa862ad1eb21d6a55564326bb10.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 25,
-                name: "Custodi",
-                faction: "Golem",
-                image: "Versaria.library/images/M66BXNHY4K89X.info/a41c4a3aec59eeba5b42aaa9e29e6fd7.jpg",
-                fullImage: "Versaria.library/images/M66BXNHY4K89X.info/a41c4a3aec59eeba5b42aaa9e29e6fd7.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 26,
-                name: "Drake",
-                faction: "Demon",
-                image: "Versaria.library/images/M66BW65DUMPYP.info/baa4ed49a03c827862ba4b66276309dc.jpg",
-                fullImage: "Versaria.library/images/M66BW65DUMPYP.info/baa4ed49a03c827862ba4b66276309dc.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 27,
-                name: "Reaper crab",
-                faction: "Others",
-                image: "Versaria.library/images/M66C0H81U721L.info/3b1b0a3b0d9aed66d5ce1da6f0def63d.jpg",
-                fullImage: "Versaria.library/images/M66C0H81U721L.info/3b1b0a3b0d9aed66d5ce1da6f0def63d.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 28,
-                name: "Minotaur",
-                faction: "Others",
-                image: "Versaria.library/images/M66BX1L0Q1KV7.info/edd49221bbe0fc55a63d5b04a970e87d.jpg",
-                fullImage: "Versaria.library/images/M66BX1L0Q1KV7.info/edd49221bbe0fc55a63d5b04a970e87d.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 29,
-                name: "Steel crab",
-                faction: "Others",
-                image: "Versaria.library/images/M66BZ08EBOXKF.info/7b4bc104befece88d25d48b1cf8bccc2.jpg",
-                fullImage: "Versaria.library/images/M66BZ08EBOXKF.info/7b4bc104befece88d25d48b1cf8bccc2.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 30,
-                name: "Crystal spider",
-                faction: "Aracnid",
-                image: "Versaria.library/images/M66BMWMQJX1E9.info/acc21625627400cf7583cd9b01685c74.jpg",
-                fullImage: "Versaria.library/images/M66BMWMQJX1E9.info/acc21625627400cf7583cd9b01685c74.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 31,
-                name: "Owl bear",
-                faction: "Others",
-                image: "Versaria.library/images/M66BVZV38BJR8.info/47e38d0a648136e92b038db415133b01.png",
-                fullImage: "Versaria.library/images/M66BVZV38BJR8.info/47e38d0a648136e92b038db415133b01.png",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 32,
-                name: "Borax",
-                faction: "Others",
-                image: "Versaria.library/images/M66BZXK1L4NM7.info/f030caf8f7cf3405c939db16d850e577.jpg",
-                fullImage: "Versaria.library/images/M66BZXK1L4NM7.info/f030caf8f7cf3405c939db16d850e577.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 33,
-                name: "Driller",
-                faction: "Others",
-                image: "Versaria.library/images/M668VGSXI806U.info/38699ac63a2c186364a58dc938b470a3.jpg",
-                fullImage: "Versaria.library/images/M668VGSXI806U.info/38699ac63a2c186364a58dc938b470a3.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 34,
-                name: "Alurane",
-                faction: "Pathogen",
-                image: "Versaria.library/images/M66BMIS9EUG9J.info/257e97feb87482f4345870e698f39f44.jpg",
-                fullImage: "Versaria.library/images/M66BMIS9EUG9J.info/257e97feb87482f4345870e698f39f44.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 35,
-                name: "Oni",
-                faction: "Demon",
-                image: "Versaria.library/images/M85OGGBKIEH55.info/GeCQrvta8AA5R6o.jpg",
-                fullImage: "Versaria.library/images/M85OGGBKIEH55.info/GeCQrvta8AA5R6o.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 36,
-                name: "Ogre",
-                faction: "Others",
-                image: "Versaria.library/images/M85ODBU74BYRO.info/rdgwsefvwe.png",
-                fullImage: "Versaria.library/images/M85ODBU74BYRO.info/rdgwsefvwe.png",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 37,
-                name: "Red dragon",
-                faction: "Dragon",
-                image: "Versaria.library/images/M66BT7QP1KGHD.info/8ea8527b177188f4e72f18ef98a4ce50.png",
-                fullImage: "Versaria.library/images/M66BT7QP1KGHD.info/8ea8527b177188f4e72f18ef98a4ce50.png",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 38,
-                name: "Wendigo",
-                faction: "Undead",
-                image: "Versaria.library/images/M66BRFRETH59C.info/9932ae8f1c57595df20f146841602520.jpg",
-                fullImage: "Versaria.library/images/M66BRFRETH59C.info/9932ae8f1c57595df20f146841602520.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 39,
-                name: "Manton",
-                faction: "Colossus",
-                image: "Versaria.library/images/M66BS4MYML5VA.info/bb3a16c9fee07be96d1c2e195f21387e.jpg",
-                fullImage: "Versaria.library/images/M66BS4MYML5VA.info/bb3a16c9fee07be96d1c2e195f21387e.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 40,
-                name: "Hydra",
-                faction: "Dragon",
-                image: "Versaria.library/images/M91OUZIDIT9XF.info/82e4d00a674cc4d542829e60b4128d3a.png",
-                fullImage: "Versaria.library/images/M91OUZIDIT9XF.info/82e4d00a674cc4d542829e60b4128d3a.png",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 41,
-                name: "Cyclopse",
-                faction: "Others",
-                image: "Versaria.library/images/M91OV2RWL7FEH.info/5b4156bf0548f84439d77c8a8422662b.jpg",
-                fullImage: "Versaria.library/images/M91OV2RWL7FEH.info/5b4156bf0548f84439d77c8a8422662b.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 42,
-                name: "Litch",
-                faction: "Undead",
-                image: "Versaria.library/images/M91OUEXVOIIIZ.info/0f956dc754d0ffab16f72f8a19959889.jpg",
-                fullImage: "Versaria.library/images/M91OUEXVOIIIZ.info/0f956dc754d0ffab16f72f8a19959889.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 43,
-                name: "Stag beetle",
-                faction: "Others",
-                image: "Versaria.library/images/M91OT9L5954X0.info/e4efce59c13af218f2a176c8dab5bb5a.png",
-                fullImage: "Versaria.library/images/M91OT9L5954X0.info/e4efce59c13af218f2a176c8dab5bb5a.png",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 44,
-                name: "Aurochs",
-                faction: "Human",
-                image: "Versaria.library/images/M92QVQIZ9F33A.info/6cc884d9316caf895a11d16a0f9a6c78.jpg",
-                fullImage: "Versaria.library/images/M92QVQIZ9F33A.info/6cc884d9316caf895a11d16a0f9a6c78.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 45,
-                name: "Werewolf",
-                faction: "Human",
-                image: "Versaria.library/images/M92SZN9ST9CFW.info/pbs.jpg",
-                fullImage: "Versaria.library/images/M92SZN9ST9CFW.info/pbs.jpg",
-                description: "A curse that turns a human into a tall two legged bloodthusty wolf every full moon.",
-                tags: ["", ""],
-                abilities: [
-                    { name: "Magic resistance", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 46,
-                name: "False-Lamb",
-                faction: "Demon",
-                image: "Versaria.library/images/M93KDJWIWI5EF.info/Funny-Sheep-Facts-jpg.webp",
-                fullImage: "Versaria.library/images/M93KDJWIWI5EF.info/Funny-Sheep-Facts-jpg.webp",
-                description: "The false-lamb is a creature of an unknown appearance that sneaks into sheep farms, and targets pregnant female sheep. It then crawls into the mother sheep, eats the baby within her, and takes the place of the fetus. It can be identified due to the fact that after the mother sheep gives birth, she will die of natural causes, and the lamb, regardless of the color of its parents, will always be pure white and completely clean. After this, it will slowly devour each sheep on the farm, then go for the farmers when there’s nothing left.",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 47,
-                name: "Swamp marsh",
-                faction: "Pathogen",
-                image: "Versaria.library/images/M92YFWJXD2ZGF.info/4e69d635486600fe15bf82009fcb658f6fcef4df.jpg",
-                fullImage: "Versaria.library/images/M92YFWJXD2ZGF.info/4e69d635486600fe15bf82009fcb658f6fcef4df.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 48,
-                name: "Earth golem",
-                faction: "Golem",
-                image: "Versaria.library/images/M915OHBBG7GPH.info/821530312b696ae130d27db979f45cb2.png",
-                fullImage: "Versaria.library/images/M915OHBBG7GPH.info/821530312b696ae130d27db979f45cb2.png",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 49,
-                name: "Vampire",
-                faction: "Demon",
-                image: "Versaria.library/images/M92ZL9A490FIF.info/little_may_s_vampire_by_kawacy_dg5qwds-fullview.jpg",
-                fullImage: "Versaria.library/images/M92ZL9A490FIF.info/little_may_s_vampire_by_kawacy_dg5qwds-fullview.jpg",
-                description: "",
-                tags: ["", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
-            },
-            {
-                id: 50,
-                name: "Living armour",
-                faction: "Others",
-                image: "Versaria.library/images/M93KTL0BGG06D.info/85db0a58130757.jpg",
-                fullImage: "Versaria.library/images/M93KTL0BGG06D.info/85db0a58130757.jpg",
-                description: "",
-                tags: ["Defence", ""],
-                abilities: [
-                    { name: "", desc: "" },
-                    { name: "", desc: "" },
-                    { name: "", desc: "" }
-                ]
+                    { 
+                        "name": "Lifecycle Adaptation", 
+                        "desc": "Post-50 feminization enhances longevity (elders appear eternally youthful)" 
+                    },
+                    { 
+                        "name": "Tideshock Phalanx", 
+                        "desc": "Warriors interlock arms to form near-impenetrable shield walls" 
+                    },
+                    { 
+                        "name": "Ancestral Communion", 
+                        "desc": "Elders channel deceased predecessors' wisdom via incense rituals" 
+                    },
+                    { 
+                        "name": "Sacred Veins", 
+                        "desc": "Elders' luminous tattoos grant minor precognition (1/day)" 
+                    }
+                ],
+                weaknesses: [
+                    "Cultural fragility: Low birthrate due to single-gender reproduction",
+                    "Transition crisis: Year-long vulnerability during feminization",
+                    "Taboo bonds: Forbidden relationships disrupt social harmony"
+                ],
+                variants: [
+                        "Unlit One (Hikarenai): Warriors never chosen by elders; often become ascetic monks",
+                        "Oracle Elder: Misura with silvered eyes who speaks in ancestral tongues",
+                        "Half-Light (Han'yō): Hybrid offspring with non-Sura traits (elf ears, dwarven resilience)",
+                ],
             }
         ];
         
@@ -813,7 +441,15 @@
         const modalName = document.querySelector('.modal-name');
         const modalFaction = document.querySelector('.modal-faction');
         const modalDescription = document.querySelector('.modal-description');
+        const modalBehavior = document.querySelector('.modal-behavior');
         const modalAbilities = document.querySelector('.modal-abilities');
+        const habitatEl = document.querySelector('.habitat');
+        const dietEl = document.querySelector('.diet');
+        const sizeEl = document.querySelector('.size');
+        const threatEl = document.querySelector('.threat');
+        const tagsContainer = document.querySelector('.tags-container');
+        const weaknessesList = document.querySelector('.weaknesses-list');
+        const variantsList = document.querySelector('.variants-list');
         
         // Display characters
         function displayCharacters(filter = 'all') {
@@ -856,28 +492,59 @@
             });
         }
         
-        // Open character modal
+        // Open character modal with expanded information
         function openCharacterModal(character) {
             modalImage.src = character.fullImage;
             modalImage.alt = character.name;
             modalName.textContent = character.name;
             modalFaction.textContent = character.faction;
             modalDescription.textContent = character.description;
+            modalBehavior.textContent = character.behavior;
+            habitatEl.textContent = character.habitat;
+            dietEl.textContent = character.diet;
+            sizeEl.textContent = character.size;
+            threatEl.textContent = character.threat;
             
-            // Clear existing abilities
+            // Update tags
+            tagsContainer.innerHTML = '';
+            character.tags.forEach(tag => {
+                const tagEl = document.createElement('span');
+                tagEl.className = 'tag';
+                tagEl.textContent = tag;
+                tagsContainer.appendChild(tagEl);
+            });
+            
+            // Clear and update abilities
             while (modalAbilities.children.length > 1) {
                 modalAbilities.removeChild(modalAbilities.lastChild);
             }
             
-            // Add new abilities
             character.abilities.forEach(ability => {
-                const abilityDiv = document.createElement('div');
-                abilityDiv.className = 'ability';
-                abilityDiv.innerHTML = `
-                    <div class="ability-name">${ability.name}</div>
-                    <div class="ability-desc">${ability.desc}</div>
-                `;
-                modalAbilities.appendChild(abilityDiv);
+                if (ability.name && ability.desc) {
+                    const abilityDiv = document.createElement('div');
+                    abilityDiv.className = 'ability';
+                    abilityDiv.innerHTML = `
+                        <div class="ability-name">${ability.name}</div>
+                        <div class="ability-desc">${ability.desc}</div>
+                    `;
+                    modalAbilities.appendChild(abilityDiv);
+                }
+            });
+            
+            // Update weaknesses
+            weaknessesList.innerHTML = '';
+            character.weaknesses.forEach(weakness => {
+                const li = document.createElement('li');
+                li.textContent = weakness;
+                weaknessesList.appendChild(li);
+            });
+            
+            // Update variants
+            variantsList.innerHTML = '';
+            character.variants.forEach(variant => {
+                const li = document.createElement('li');
+                li.innerHTML = variant;
+                variantsList.appendChild(li);
             });
             
             modal.classList.add('active');
