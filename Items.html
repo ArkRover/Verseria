@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Items</title>
+    <title>Items - Versaria Universe</title>
     <link rel="icon" type="image/x-icon" href="Versaria.library\images\MBE2CSW4GLAHB.info\e3d7988a77fbb7b88458cc2e8345f49a762a9e90.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="itemStyle.css">
 </head>
 <body>
@@ -17,8 +18,9 @@
                 <li><a href="Customization.html">Customization</a></li>
                 <li><a href="World.html">World</a></li>
                 <li><a href="Lore.html">Lore</a></li>
-                <li><a href="Items.html">Items</a></li>
+                <li><a href="Items.html" class="active">Items</a></li>
                 <li><a href="Magic.html">Magic</a></li>
+                <li><a href="Mechanics.html">Mechanics</a></li>
             </ul>
         </nav>
     </header>
@@ -26,87 +28,274 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Items</h1>
-            <p></p>
+            <p>Discover the vast collection of weapons, armor, and magical artifacts in the Versaria universe</p>
         </div>
     </section>
     
     <div class="container">
-        <div class="album-header">
-            <div class="album-description">
-                Items that can be found or crafted.
+        <div class="filter-controls">
+            <div class="filter-group">
+                <span class="filter-label">Categories:</span>
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="weapon">Weapons</button>
+                <button class="filter-btn" data-filter="armor">Armor</button>
+                <button class="filter-btn" data-filter="magic">Magic</button>
+                <button class="filter-btn" data-filter="consumable">Consumables</button>
+                <button class="filter-btn" data-filter="material">Materials</button>
+                <button class="filter-btn" data-filter="clothes">Clothes</button>
             </div>
-            <div class="album-tags">
-                <span class="tag">1</span>
-                <span class="tag">1</span>
-                <span class="tag">1</span>
-                <span class="tag">1</span>
-                <span class="tag">1</span>
+            <div class="filter-group">
+                <span class="filter-label">Rarity:</span>
+                <button class="filter-btn" data-filter="common">Common</button>
+                <button class="filter-btn" data-filter="uncommon">Uncommon</button>
+                <button class="filter-btn" data-filter="rare">Rare</button>
+                <button class="filter-btn" data-filter="epic">Epic</button>
+                <button class="filter-btn" data-filter="legendary">Legendary</button>
             </div>
+            <input type="text" class="search-box" placeholder="Search items..." id="searchBox">
         </div>
         
         <div class="gallery" id="gallery">
-            <!-- Images will be loaded here by JavaScript -->
-        </div>
-        
-        <div class="pagination">
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">Next →</a>
+            <!-- Items will be loaded here by JavaScript -->
         </div>
     </div>
     
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightboxClose">×</button>
-        <div class="lightbox-content" id="lightboxContent">
+        <div class="lightbox-content">
             <img src="" alt="" id="lightboxImage">
+            <div class="lightbox-info">
+                <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                <div class="lightbox-tags" id="lightboxTags"></div>
+                <p class="lightbox-desc" id="lightboxDesc"></p>
+            </div>
         </div>
         <div class="lightbox-nav">
-            <button id="lightboxPrev">←</button>
-            <button id="lightboxNext">→</button>
+            <button id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+            <button id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
         </div>
-        <div class="lightbox-counter" id="lightboxCounter">1/200</div>
+        <div class="lightbox-counter" id="lightboxCounter">1/10</div>
     </div>
     
     <footer>
-        <p>&copy; 2025 Versaria Universe. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">FAQ</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2025 Versaria Universe. All rights reserved.</p>
     </footer>
     
     <script>
-        // Sample image data - in a real app, this would come from an API
-        const images = [
-            { id: 1, url: 'Versaria.library/images/M83GLT44KKYD8.info/e4db19f3c33493b1a615e14e5042670b.jpg', title: 'Rogues grappling hook'},
-            { id: 2, url: 'Versaria.library/images/M80R1I8JJJPM2.info/9692bd832a32441b5844b2215906aee2.jpg', title: 'Silver silk'},
-            { id: 3, url: 'Versaria.library/images/M80R3CXR34PC2.info/a50f1cd7182b9d3fd11b5e02c9be0548.jpg', title: 'Spellbinding string'},
-            { id: 4, url: 'Versaria.library/images/M80QZWE4A18AW.info/db98468ec6c032cbd18b63f3e577b3ab.png', title: 'Thunderous tempo'},
-            { id: 5, url: 'Versaria.library/images/M83GEJWAJC8AM.info/Exalted echo.png', title: 'Exalted echo'},
-            { id: 6, url: 'https://via.placeholder.com/600x800/7fffff/333333?text=Art+6', title: 'Item 6'},
-            { id: 7, url: 'https://via.placeholder.com/600x800/ffbf7f/333333?text=Art+7', title: 'Item 7'},
-            { id: 8, url: 'https://via.placeholder.com/600x800/7fbf7f/333333?text=Art+8', title: 'Item 8'},
-            { id: 9, url: 'https://via.placeholder.com/600x800/7f7fbf/333333?text=Art+9', title: 'Item 9'},
-            { id: 10, url: 'https://via.placeholder.com/600x800/bfbf7f/333333?text=Art+10', title: 'Item 10'},
-            { id: 11, url: 'https://via.placeholder.com/600x800/bf7fbf/333333?text=Art+11', title: 'Item 11'},
-            { id: 12, url: 'https://via.placeholder.com/600x800/7fbfbf/333333?text=Art+12', title: 'Item 12'},
+        // Enhanced item data with tags, rarity, and descriptions
+        const items = [
+            { 
+                id: 1, 
+                url: 'Versaria.library/images/M83GLT44KKYD8.info/e4db19f3c33493b1a615e14e5042670b.jpg', 
+                title: 'Rogue\'s Grappling Hook',
+                tags: ['weapon', 'tool', 'uncommon'],
+                rarity: 'uncommon',
+                desc: 'A compact grappling hook used by rogues and thieves to scale walls and reach difficult areas. Can also be used as an improvised weapon in combat.'
+            },
+            { 
+                id: 2, 
+                url: 'Versaria.library/images/M80R1I8JJJPM2.info/9692bd832a32441b5844b2215906aee2.jpg', 
+                title: 'Silver Silk',
+                tags: ['clothes', 'magic', 'rare'],
+                rarity: 'rare',
+                desc: 'Magically infused silk that shines like silver. Used by master weavers to create lightweight but incredibly strong armor and garments.'
+            },
+            { 
+                id: 3, 
+                url: 'Versaria.library/images/M80R3CXR34PC2.info/a50f1cd7182b9d3fd11b5e02c9be0548.jpg', 
+                title: 'Spellbinding String',
+                tags: ['weapon', 'magic', 'epic'],
+                rarity: 'epic',
+                desc: 'A thread that hums with magical energy. When woven into clothing, it can store spells and release them under specific conditions.'
+            },
+            { 
+                id: 4, 
+                url: 'Versaria.library/images/M80QZWE4A18AW.info/db98468ec6c032cbd18b63f3e577b3ab.png', 
+                title: 'Thunderous Tempo',
+                tags: ['weapon', 'magic', 'rare'],
+                rarity: 'rare',
+                desc: 'A drum that produces shockwaves with each beat. In skilled hands, it can stun enemies or empower allies with rhythmic magic.'
+            },
+            { 
+                id: 5, 
+                url: 'Versaria.library/images/M83GEJWAJC8AM.info/Exalted echo.png', 
+                title: 'Exalted Echo',
+                tags: ['weapon', 'magic', 'legendary'],
+                rarity: 'legendary',
+                desc: 'A legendary helmet that captures the whispers of ancient warriors. Grants the wearer combat knowledge from past champions.'
+            },
+            { 
+                id: 6, 
+                url: 'https://via.placeholder.com/600x800/7fffff/333333?text=Art+6', 
+                title: 'Phoenix Feather Cloak',
+                tags: ['armor', 'magic', 'epic'],
+                rarity: 'epic',
+                desc: 'A cloak woven from the feathers of a phoenix. Provides resistance to fire and can briefly grant the wearer the ability to fly.'
+            },
+            { 
+                id: 7, 
+                url: 'https://via.placeholder.com/600x800/ffbf7f/333333?text=Art+7', 
+                title: 'Healing Potion',
+                tags: ['consumable', 'common'],
+                rarity: 'common',
+                desc: 'A basic healing potion that restores a moderate amount of health. Brewed by alchemists across the realm.'
+            },
+            { 
+                id: 8, 
+                url: 'https://via.placeholder.com/600x800/7fbf7f/333333?text=Art+8', 
+                title: 'Dragonbone Greatsword',
+                tags: ['weapon', 'rare'],
+                rarity: 'rare',
+                desc: 'A massive sword forged from the bones of an ancient dragon. Lighter than steel but capable of cutting through almost anything.'
+            },
+            { 
+                id: 9, 
+                url: 'https://via.placeholder.com/600x800/7f7fbf/333333?text=Art+9', 
+                title: 'Mana Crystal',
+                tags: ['material', 'magic', 'uncommon'],
+                rarity: 'uncommon',
+                desc: 'A crystal that stores magical energy. Used by mages to power spells or recharge magical items.'
+            },
+            { 
+                id: 10, 
+                url: 'https://via.placeholder.com/600x800/bfbf7f/333333?text=Art+10', 
+                title: 'Shadow Dagger',
+                tags: ['weapon', 'magic', 'epic'],
+                rarity: 'epic',
+                desc: 'A dagger that exists partially in the shadow realm. Can pass through solid objects for brief moments.'
+            },
+            { 
+                id: 11, 
+                url: 'https://via.placeholder.com/600x800/bf7fbf/333333?text=Art+11', 
+                title: 'Titan\'s Plate',
+                tags: ['armor', 'legendary'],
+                rarity: 'legendary',
+                desc: 'Armor said to be worn by the ancient titans. Grants incredible protection but is extremely heavy.'
+            },
+            { 
+                id: 12, 
+                url: 'https://via.placeholder.com/600x800/7fbfbf/333333?text=Art+12', 
+                title: 'Elixir of Invisibility',
+                tags: ['consumable', 'rare'],
+                rarity: 'rare',
+                desc: 'A rare potion that renders the drinker invisible for a short duration. The effect ends if the user attacks or takes damage.'
+            }
         ];
         
         // Current image index for lightbox
         let currentImageIndex = 0;
+        let filteredItems = [...items];
         
         // Initialize the gallery
         function initGallery() {
             const gallery = document.getElementById('gallery');
+            renderGalleryItems(filteredItems);
             
-            images.forEach((image, index) => {
+            // Set up filter buttons
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Toggle active class
+                    if (this.dataset.filter === 'all') {
+                        document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    } else {
+                        document.querySelector('.filter-btn[data-filter="all"]').classList.remove('active');
+                        this.classList.toggle('active');
+                    }
+                    
+                    filterItems();
+                });
+            });
+            
+            // Set up search box
+            document.getElementById('searchBox').addEventListener('input', filterItems);
+        }
+        
+        // Filter items based on active filters and search
+        function filterItems() {
+            const activeFilters = Array.from(document.querySelectorAll('.filter-btn.active'))
+                .map(btn => btn.dataset.filter);
+            
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            
+            filteredItems = items.filter(item => {
+                // Check search term
+                const matchesSearch = item.title.toLowerCase().includes(searchTerm) || 
+                                     item.desc.toLowerCase().includes(searchTerm);
+                
+                if (!matchesSearch) return false;
+                
+                // If "all" is selected or no category filters are active, show all
+                const categoryFilters = activeFilters.filter(f => 
+                    f !== 'all' && 
+                    f !== 'common' && 
+                    f !== 'uncommon' && 
+                    f !== 'rare' && 
+                    f !== 'epic' && 
+                    f !== 'legendary'
+                );
+                
+                const rarityFilters = activeFilters.filter(f => 
+                    f === 'common' || 
+                    f === 'uncommon' || 
+                    f === 'rare' || 
+                    f === 'epic' || 
+                    f === 'legendary'
+                );
+                
+                // Check if any category filters are active
+                const matchesCategory = categoryFilters.length === 0 || 
+                    categoryFilters.some(filter => item.tags.includes(filter));
+                
+                // Check if any rarity filters are active
+                const matchesRarity = rarityFilters.length === 0 || 
+                    rarityFilters.includes(item.rarity);
+                
+                return matchesCategory && matchesRarity;
+            });
+            
+            renderGalleryItems(filteredItems);
+        }
+        
+        // Render gallery items
+        function renderGalleryItems(itemsToRender) {
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = '';
+            
+            if (itemsToRender.length === 0) {
+                gallery.innerHTML = '<div class="no-results">No items match your search criteria.</div>';
+                return;
+            }
+            
+            itemsToRender.forEach((item, index) => {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'gallery-item';
                 galleryItem.dataset.index = index;
                 
                 galleryItem.innerHTML = `
-                    <img src="${image.url}" alt="${image.title}" loading="lazy">
+                    <img src="${item.url}" alt="${item.title}" loading="lazy">
                     <div class="gallery-item-info">
-                        <div>${image.title}</div>
+                        <div class="gallery-item-title">${item.title}</div>
+                        <div class="gallery-item-tags">
+                            ${item.tags.map(tag => `<span class="gallery-item-tag">${tag}</span>`).join('')}
+                            <span class="gallery-item-tag">${item.rarity}</span>
+                        </div>
+                        <p class="gallery-item-desc">${item.desc.substring(0, 80)}...</p>
                     </div>
                 `;
                 
@@ -120,11 +309,34 @@
             currentImageIndex = index;
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxTags = document.getElementById('lightboxTags');
+            const lightboxDesc = document.getElementById('lightboxDesc');
             const lightboxCounter = document.getElementById('lightboxCounter');
             
-            lightboxImage.src = images[index].url;
-            lightboxImage.alt = images[index].title;
-            lightboxCounter.textContent = `${index + 1}/${images.length}`;
+            const item = filteredItems[index];
+            
+            lightboxImage.src = item.url;
+            lightboxImage.alt = item.title;
+            lightboxTitle.textContent = item.title;
+            lightboxDesc.textContent = item.desc;
+            lightboxCounter.textContent = `${index + 1}/${filteredItems.length}`;
+            
+            // Clear and add tags
+            lightboxTags.innerHTML = '';
+            item.tags.forEach(tag => {
+                const tagElement = document.createElement('span');
+                tagElement.className = 'lightbox-tag';
+                tagElement.textContent = tag;
+                lightboxTags.appendChild(tagElement);
+            });
+            
+            // Add rarity tag
+            const rarityTag = document.createElement('span');
+            rarityTag.className = 'lightbox-tag';
+            rarityTag.textContent = item.rarity;
+            lightboxTags.appendChild(rarityTag);
+            
             lightbox.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
@@ -139,9 +351,9 @@
         // Navigate between images in lightbox
         function navigateLightbox(direction) {
             if (direction === 'prev') {
-                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                currentImageIndex = (currentImageIndex - 1 + filteredItems.length) % filteredItems.length;
             } else {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
+                currentImageIndex = (currentImageIndex + 1) % filteredItems.length;
             }
             openLightbox(currentImageIndex);
         }
