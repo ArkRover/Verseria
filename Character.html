@@ -35,131 +35,83 @@
     </section>
 
     <main class="main-container">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="race-filter">Race</label>
+                <select id="race-filter" class="filter-select">
+                    <option value="all">All Races</option>
+                    <option value="Elven">Elven</option>
+                    <option value="Human">Human</option>
+                    <option value="Hob">Hob</option>
+                    <option value="Dragonkin">Dragonkin</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="personality-filter">Personality</label>
+                <select id="personality-filter" class="filter-select">
+                    <option value="all">All Personalities</option>
+                    <option value="Loyal">Loyal</option>
+                    <option value="Mysterious">Mysterious</option>
+                    <option value="Devoted">Devoted</option>
+                    <option value="Powerful">Powerful</option>
+                    <option value="Wise">Wise</option>
+                    <option value="Arrogant">Arrogant</option>
+                </select>
+            </div>
+            
+            <button id="reset-filters" class="filter-btn">Reset Filters</button>
+        </div>
+        
         <div class="character-grid">
-            <div class="character-card">
-                <div class="card-image">
-                    <img src="Versaria.library/images/M6C0GGL95GEMW.info/e76defd8e2db4ac71ed80eb5a6bd2489.jpg" alt="Sinclair">
-                </div>
-                <div class="card-content">
-                    <h2>Sinclair</h2>
-                    <p class="character-title">Royal advisor &amp; Concubine</p>
-                    <p class="character-description">
-                        A elven who has served one of The Great Noble Families as an advisor for centuries until becoming a 
-                        concubine for the 21st king. Though he wished to marry her as queen, political opposition prevented this.
-                        <span class="dots">...</span>
-                        <span class="more-text" style="display: none;">
-                            She agreed to remain as concubine on the condition he marry a woman he could love. 
-                            After the king's natural death, she continued as royal advisor and gained greater respect as an official 
-                            member of the royal family.
-                        </span>
-                    </p>
-                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
-                    <p class="character-species">Elven/Human</p>
-                </div>
-            </div>
-            
-            <!-- Other character cards follow the same pattern -->
-            
-            <div class="character-card">
-                <div class="card-image">
-                    <img src="Versaria.library/images/M6C05INGYYPLD.info/BlakeValkyrieOfTheDarkMoon.jpg" alt="Blake">
-                </div>
-                <div class="card-content">
-                    <h2>Blake</h2>
-                    <p class="character-title">Valkyrie of the Dark Moon</p>
-                    <p class="character-description">A mysterious warrior who serves the lunar deities.</p>
-                    <button class="character-contact">Details <i class="fas fa-info-circle"></i></button>
-                    <p class="character-species">Hob/Human</p>
-                </div>
-            </div>
-            
-            <div class="character-card">
-                <div class="card-image">
-                    <img src="Versaria.library/images/M6C0ENH6ORPAV.info/dfe1dfd55529515d131c150314ad53f2.jpg" alt="Levana">
-                </div>
-                <div class="card-content">
-                    <h2>Levana</h2>
-                    <p class="character-title">Temple Knight</p>
-                    <p class="character-description">A devoted guardian of sacred sites.</p>
-                    <button class="character-contact">Details <i class="fas fa-info-circle"></i></button>
-                    <p class="character-species">Hob/Human</p>
-                </div>
-            </div>
-            
-            <div class="character-card">
-                <div class="card-image">
-                    <img src="Versaria.library/images/M6C05GU62V070.info/LeoneValkyrieOfTheRisingSun.jpg" alt="Leone">
-                </div>
-                <div class="card-content">
-                    <h2>Leone</h2>
-                    <p class="character-title">Valkyrie of the Rising Sun</p>
-                    <p class="character-description">Solar counterpart to Blake, warrior of dawn.</p>
-                    <button class="character-contact">Details <i class="fas fa-info-circle"></i></button>
-                    <p class="character-species">Hob/Human</p>
-                </div>
-            </div>
-            
-            <div class="character-card">
-                <div class="card-image">
-                    <img src="Versaria.library/images/M83F9RHO3FBZY.info/124088059_p0_master1200.png" alt="Domitri">
-                </div>
-                <div class="card-content">
-                    <h2>Domitri</h2>
-                    <p class="character-title">Dragon Lord</p>
-                    <p class="character-description">A powerful being of draconic heritage.</p>
-                    <button class="character-contact">Details <i class="fas fa-info-circle"></i></button>
-                    <p class="character-species">Dragonkin/Dragon</p>
-                </div>
-            </div>
-            
-            <div class="character-card">
-                <div class="card-image">
-                    <img src="Versaria.library/images/M8M122IW23XZS.info/Vivas_ren.webp" alt="Vivian">
-                </div>
-                <div class="card-content">
-                    <h2>Vivian</h2>
-                    <p class="character-title">Mystic Seer</p>
-                    <p class="character-description">Keeper of ancient knowledge and visions.</p>
-                    <button class="character-contact">Details <i class="fas fa-info-circle"></i></button>
-                    <p class="character-species">Hob/Human</p>
-                </div>
-            </div>
-
-            <div class="character-card">
-                <div class="card-image">
-                    <img src="Versaria.library\images\M8TZU4PJVHI5X.info\dc1iona-661a5edf-f83a-436b-a000-fb8b6736fb45.jpg" alt="">
-                </div>
-                <div class="card-content">
-                    <h2>Chian</h2>
-                    <p class="character-title">KNIGHT</p>
-                    <p class="character-description">
-                        
-                        <span class="dots">...</span>
-                        <span class="more-text" style="display: none;">
-                            
-                        </span>
-                    </p>
-                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
-                    <p class="character-species"></p>
-                </div>
-            </div>
-
-            <div class="character-card">
-                <div class="card-image">
-                    <img src="Versaria.library\images\M91OZE5R999ES.info\193a28c010ee1f567bf4fe82e53351b7.jpg" alt="">
-                </div>
-                <div class="card-content">
-                    <h2></h2>
-                    <p class="character-title"></p>
-                    <p class="character-description">
-                        
-                        <span class="dots">...</span>
-                        <span class="more-text" style="display: none;">
-                            
-                        </span>
-                    </p>
-                    <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
-                    <p class="character-species"></p>
+            <!-- Character cards will be added here by JavaScript -->
+        </div>
+    
+        <div class="character-modal">
+            <div class="close-modal">&times;</div>
+            <div class="modal-content">
+                <img src="" alt="Character Full Image" class="modal-image">
+                <div class="modal-info">
+                    <h2 class="modal-name">Character Name</h2>
+                    <p class="modal-faction">Occupation</p>
+                    
+                    <div class="character-stats">
+                        <div class="stat-box">
+                            <strong>Race:</strong> <span class="race">Elven/Human</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong>Personality:</strong> <span class="personality">Loyal</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tags-container">
+                        <!-- Tags will be added here -->
+                    </div>
+                    
+                    <div class="modal-info-section">
+                        <h3>Description</h3>
+                        <p class="modal-description">Character description will appear here with detailed background information and story.</p>
+                    </div>
+                    
+                    <div class="modal-info-section">
+                        <h3>Background</h3>
+                        <p class="modal-background">Details about the character's history and development.</p>
+                    </div>
+                    
+                    <div class="modal-info-section">
+                        <h3>Abilities</h3>
+                        <div class="modal-abilities">
+                            <!-- Abilities will be added here -->
+                        </div>
+                    </div>
+                    
+                    <div class="modal-info-section">
+                        <h3>Relationships</h3>
+                        <ul class="relationships-list">
+                            <!-- Relationships will be added here -->
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

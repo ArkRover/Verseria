@@ -100,22 +100,16 @@ nav ul li a:hover {
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     margin-bottom: 30px;
     line-height: 1.6;
-}
-
-.hero-btns {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
 }
 
 .trailer-btn {
