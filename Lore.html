@@ -1,122 +1,187 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Versaria - Lore</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="Versaria.library\images\MBE2CSW4GLAHB.info\e3d7988a77fbb7b88458cc2e8345f49a762a9e90.png">
-        <link rel="stylesheet" href="">
-        <style>
-            body
-            {
-                background-color: #000;
-                color: #fff;
-                text-align: center;
-            }
-
-            header {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 100;
-                padding: 20px 0; /* Changed from 40px to 0 on sides */
-                background-color: rgba(0, 0, 0, 0.5);
-                backdrop-filter: blur(10px);
-                text-align: center;
-            }
-
-            nav ul {
-                display: inline-block;
-                list-style: none;
-                margin: 0 auto;
-                padding: 0;
-            }
-
-            nav ul li {
-                display: inline-block;
-                margin: 0 15px;
-            }
-
-            nav ul li a {
-                color: #fff;
-                text-decoration: none;
-                font-weight: bold;
-                text-transform: uppercase;
-                font-size: 14px;
-                letter-spacing: 1px;
-                transition: color 0.3s;
-            }
-
-            nav ul li a:hover {
-                color: #f0c14b;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Character.html">Characters</a></li>
-                <li><a href="Creature.html">Creatures</a></li>
-                <li><a href="Customization.html">Customization</a></li>
-                <li><a href="World.html">World</a></li>
-                <li><a href="Lore.html">Lore</a></li>
-                <li><a href="Items.html">Items</a></li>
-                <li><a href="Magic.html">Magic</a></li>
-                <li><a href="Mechanics.html">Mechanics</a></li>
-            </ul>
-        </nav>
-    </header>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <section class="hero">
-        <div class="hero-content">
-            <h1></h1>
-            <p></p>
-        </div>
-    </section>
-
-        <h1>
-            Lore
-        </h1>
-        <h2>
-            10 year flood
-        </h2>
-        <p>
-            A third of the world experienced rain for 10 years straight. This negatively affected multiple country's especially Theilane which got 
-            the worst of it with it getting the heaviest rain between all affected countries. This led to flooding, destruction of ecosystems, 
-            food shortages and the spread of diseases. The severity of each affect where different for each country.
-        </p>
-
-        <h2>
-            The great holy war
-        </h2>
-        <p>
-            This war was a conflict started by different religions fighting each other over which is the dommonent religion.
-        </p>
-
-        <h2>
-            Black water
-        </h2>
-        <p>
-            Abysal hunters solve a mystery in a costal town where strange things have been happening.
-        </p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versaria - Lore</title>
+    <link rel="icon" type="image/x-icon" href="Versaria.library\images\MBE2CSW4GLAHB.info\e3d7988a77fbb7b88458cc2e8345f49a762a9e90.png">
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #d1d1d1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #121212;
+        }
         
-        <h2>
-            The Grand Wizard
-        </h2>
-        <p>
-            You hear legends of a Grand Wizard living on top of a dangerous mountain.
-        </p>
-        <script src="" async defer></script>
-    </body>
+        h1 {
+            text-align: center;
+            color: #b58d68;
+            border-bottom: 2px solid #8a5a44;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #c9a87c;
+            margin-top: 40px;
+        }
+        
+        .entry {
+            display: flex;
+            margin-bottom: 50px;
+            align-items: center;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .entry.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .entry-image {
+            flex: 1;
+            padding: 20px;
+            background-color: #151515;
+        }
+        
+        .entry-image img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        }
+        
+        .entry-content {
+            flex: 2;
+            padding: 20px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #d4a373;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            color: #999;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        /* Additional dark theme enhancements */
+        strong {
+            color: #e0c097;
+        }
+        
+        .entry:nth-child(odd) {
+            background-color: #252525;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lore</h1>
+    
+    <div class="entry">
+        <div class="entry-image">
+            <!-- Placeholder for image - replace with actual image -->
+            <img src="Versaria.library\images\MBPERA4XZWXML.info\tgbd.jpg" alt="The Hammerhead">
+        </div>
+        <div class="entry-content">
+            <div class="section-title">The Hammerhead</div>
+            <div class="subtitle">A relic of giants, now a home for mortals</div>
+            
+            <h2>Origins & History</h2>
+            <ul>
+                <li><strong>Built by Giants:</strong> The Hammerhead was constructed by Magridar shipwrights during the Holy War, designed to carry entire battalions of 15-meter-tall warriors across the seas.</li>
+                <li><strong>A Floating Fortress:</strong> Unlike human ships, it was carved from a single, ancient tree—a mountain oak said to have been blessed by the giants' star-gods. Its hull was reinforced with meteoric iron, making it nearly unsinkable.</li>
+                <li><strong>War & Ruin:</strong> After the war, the Magridar abandoned it, believing it "too heavy with memories." Humans later salvaged it, refitting it for mortal use.</li>
+            </ul>
+            
+            <h2>Design & Features</h2>
+            <ul>
+                <li><strong>Giant-Made, Human-Adapted:</strong>
+                    <ul>
+                        <li>The deck is terraced like a stepped pyramid, allowing humans to navigate what was once built for giants.</li>
+                        <li>The original Magridar siege weapons (ballistae that fired tree-sized bolts) were removed, replaced with cargo cranes.</li>
+                    </ul>
+                </li>
+                <li><strong>The "Head":</strong> The prow is shaped like a stone hammer, a relic of its war days—it once shattered enemy fleets with a single ramming strike.</li>
+                <li><strong>Living Ship:</strong> The wood still regenerates slowly, healing damage over decades. Some say it groans in stormy weather, as if remembering battle.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="entry reverse">
+        <div class="entry-image">
+            <!-- Placeholder for image - replace with actual image -->
+            <img src="Versaria.library\images\MBPERA4XZWXML.info\tgbd.jpg" alt="Modern Use of The Hammerhead">
+        </div>
+        <div class="entry-content">
+            <h2>Modern Use</h2>
+            <ul>
+                <li><strong>The Great Ferry:</strong> Now the largest transcontinental transport in the world, carrying:
+                    <ul>
+                        <li>Colonists to new lands.</li>
+                        <li>Refugees fleeing war.</li>
+                        <li>Merchants trading in bulk goods (entire herds of livestock fit below deck).</li>
+                    </ul>
+                </li>
+                <li><strong>Crew & Culture:</strong>
+                    <ul>
+                        <li>Captain "Longshore" Halgrun: A former pirate who swears the ship speaks to him.</li>
+                        <li>The Deck Tribes: Families live aboard permanently, forming a floating slum of sailors, traders, and fugitives.</li>
+                        <li>Giant Worship: Some crew pour offerings of ale into the ship's cracks, praying to the Magridar spirits within.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h2>Legends & Mysteries</h2>
+            <ul>
+                <li><strong>The Blood Tide:</strong> On the anniversary of the Holy War, seawater near the Hammerhead turns red, and ghostly giants can be seen loading phantom weapons.</li>
+                <li><strong>The Locked Hold:</strong> One vault remains sealed by Magridar runes. Those who try to open it vanish—only their shadows stay behind, hammering at the door.</li>
+                <li><strong>The Last Giant:</strong> Rumors say a single elderly Magridar still walks the deepest decks, unseen, mourning his fallen kin.</li>
+            </ul>
+            
+            <h2>Why the Hammerhead Matters</h2>
+            <ul>
+                <li><strong>A Symbol of Peace:</strong> Once a weapon, now a bridge between nations.</li>
+                <li><strong>A Time Capsule:</strong> The last great artifact of the Magridar war-machine.</li>
+                <li><strong>A Floating City:</strong> More than a ship—a way of life for those who call it home.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="entry">
+        <div class="entry-image">
+            <!-- Placeholder for image - replace with actual image -->
+            <img src="Versaria.library\images\MBPG18GIRAUPZ.info\asian-city-fantasy-world-flood-clouds-wallpaper-c95058dd610a7dbb7687e89fb0d1065d.jpg" alt="The Ten-Year Storm">
+        </div>
+        <div class="entry-content">
+            <div class="section-title">The Ten-Year Storm</div>
+            <div class="subtitle">When the heavens wept and reshaped the world</div>
+            
+            <p>It started with a single, unceasing downpour. At first, the people of the realm dismissed it as an unusually long wet season. But when the rain did not stop after months, then years, dread settled in. The skies wept without pause, as though the heavens themselves mourned some unspeakable loss. Some whispered that the gods were at war, their tears flooding the mortal realm. Others blamed forbidden magic, a curse laid upon the world by a forgotten sorcerer-king.</p>
+            
+            <p>Rivers swelled into vast, churning seas, swallowing villages whole. Lowland kingdoms became submerged, their towers peeking above the water like gravestones. Roads turned to mud, then to rivers, then vanished entirely. Crops rotted in the fields, and famine spread like a plague. The great forests drowned, leaving only the tops of ancient oaks as eerie islands in a watery wasteland.</p>
+            
+            <p>Nobles and peasants alike fled to the highlands, where they built precarious cliffside holds and stilt-cities above the rising tides. Ships became more valuable than castles, and pirates ruled the new, uncharted waters where once there had been plains.</p>
+            
+            <p>On the tenth year, as suddenly as it had begun, the rain ceased. The clouds parted, and for the first time in a decade, the sun shone upon a world utterly transformed. Where once there had been kingdoms, now there were only lakes and marshes. Cities had sunk beneath the waves, their treasures lost to time. New islands had risen, their shores littered with the wreckage of the old world.</p>
+            
+            <p>The survivors emerged, blinking in the unfamiliar light, to rebuild upon the ruins. But none would forget the Ten-Year Storm, nor the whispered prophecy that one day, the skies would open again.</p>
+        </div>
+    </div>
+</body>
 </html>

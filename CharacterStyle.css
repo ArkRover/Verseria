@@ -717,3 +717,72 @@ nav ul li a:hover {
                 grid-template-columns: 1fr;
             }
         }
+
+.themes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .theme-item {
+            background: rgba(0,0,0,0.2);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-item:hover {
+            background: rgba(110, 68, 255, 0.1);
+        }
+        
+        .theme-link {
+            display: flex;
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .theme-info {
+            flex: 1;
+            padding: 1rem;
+        }
+        
+        .theme-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .theme-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .theme-url {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .theme-url-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+        }
+        
+        .theme-thumbnail {
+            width: 120px;
+            height: 90px;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 600px) {
+            .theme-thumbnail {
+                width: 100px;
+                height: 75px;
+            }
+        }

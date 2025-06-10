@@ -29,7 +29,8 @@
                     "21st King (deceased): Her former lover and monarch",
                     "Current Queen: Maintains a cordial but complex relationship",
                     "Noble Families: Both respects and manipulates as needed"
-                ]
+                ],
+                themes: []
             },
             {
                 id: 2,
@@ -60,7 +61,8 @@
                     "Leone: Solar counterpart, relationship status unknown",
                     "Lunar Deities: Serves them faithfully but the nature is unclear",
                     "Night Watch: Respected but kept at arm's length"
-                ]
+                ],
+                themes: []
             },
             {
                 id: 3,
@@ -91,7 +93,8 @@
                     "High Priestess: Her mentor and spiritual guide",
                     "Fellow Knights: Bonds forged in sacred duty",
                     "Temple Devotees: Protects them with fierce devotion"
-                ]
+                ],
+                themes: []
             },
             {
                 id: 4,
@@ -122,7 +125,8 @@
                     "Sun God: Absolute devotion to her deity",
                     "Blake: Solar counterpart, their dynamic is complex",
                     "Dawn Guard: Leads this elite group of warriors"
-                ]
+                ],
+                themes: []
             },
             {
                 id: 5,
@@ -153,7 +157,8 @@
                     "Mountain Clans: Rules them with firm but fair hand",
                     "Other Dragonlords: Complex web of alliances and rivalries",
                     "Human Kingdoms: Maintains careful diplomatic relations"
-                ]
+                ],
+                themes: []
             },
             {
                 id: 6,
@@ -184,7 +189,8 @@
                     "Seekers: Those who come for advice form temporary bonds",
                     "Other Seers: Network of information sharers",
                     "The Sight: Her relationship with her gift is complex"
-                ]
+                ],
+                themes: []
             },
             {
                 id: 7,
@@ -215,7 +221,8 @@
                     "The Crown: Absolute loyalty to the monarchy",
                     "Fellow Knights: Respected but sometimes envied",
                     "Common Soldiers: Fiercely protective of those under his command"
-                ]
+                ],
+                themes: []
             },
             {
                 id: 8,
@@ -227,7 +234,7 @@
                 fullImage: "",
                 description: "One of the strongest humans, a general who rose through the ranks through sheer combat prowess. His arrogance is matched only by his battlefield accomplishments.",
                 background: "Nicolas came from humble beginnings but distinguished himself in countless battles. His lack of noble blood prevents him from higher positions despite his abilities.",
-                tags: ["Warrior", "Ambitious", "Controversial"],
+                tags: ["Warrior", "Ambitious"],
                 abilities: [
                     { 
                         name: "Battle Instinct", 
@@ -246,6 +253,14 @@
                     "Nobility: Resentful of their privilege",
                     "Common Soldiers: Revered but sometimes feared",
                     "The Crown: Used for his skills but not fully trusted"
+                ],
+                themes: [
+                    {
+                        title: "Sonne - Rammstein (Slowed)",
+                        url: "https://www.youtube.com/watch?v=FcxyJ2P8J-g",
+                        description: "Main theme for Nicolas",
+                        thumbnail: "https://img.youtube.com/vi/FcxyJ2P8J-g/hqdefault.jpg"
+                    }
                 ]
             }
         ];
@@ -264,6 +279,7 @@
         const personalityEl = document.querySelector('.personality');
         const tagsContainer = document.querySelector('.tags-container');
         const relationshipsList = document.querySelector('.relationships-list');
+        const themesContainer = document.querySelector('.themes-container');
         const raceFilter = document.getElementById('race-filter');
         const personalityFilter = document.getElementById('personality-filter');
         const resetFiltersBtn = document.getElementById('reset-filters');
@@ -319,49 +335,72 @@
         
         // Open character modal with expanded information
         function openCharacterModal(character) {
-            modalImage.src = character.fullImage || character.image;
-            modalImage.alt = character.name;
-            modalName.textContent = character.name;
-            modalFaction.textContent = character.occupation;
-            modalDescription.textContent = character.description;
-            modalBackground.textContent = character.background;
-            raceEl.textContent = character.race;
-            personalityEl.textContent = character.personality;
-            
-            // Update tags
-            tagsContainer.innerHTML = '';
-            character.tags.forEach(tag => {
-                const tagEl = document.createElement('span');
-                tagEl.className = 'tag';
-                tagEl.textContent = tag;
-                tagsContainer.appendChild(tagEl);
-            });
-            
-            // Clear and update abilities
-            modalAbilities.innerHTML = '';
-            character.abilities.forEach(ability => {
-                if (ability.name && ability.desc) {
-                    const abilityDiv = document.createElement('div');
-                    abilityDiv.className = 'ability';
-                    abilityDiv.innerHTML = `
-                        <div class="ability-name">${ability.name}</div>
-                        <div class="ability-desc">${ability.desc}</div>
-                    `;
-                    modalAbilities.appendChild(abilityDiv);
-                }
-            });
-            
-            // Update relationships
-            relationshipsList.innerHTML = '';
-            character.relationships.forEach(relationship => {
-                const li = document.createElement('li');
-                li.textContent = relationship;
-                relationshipsList.appendChild(li);
-            });
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+    modalImage.src = character.fullImage || character.image; // Use fullImage if available, fallback to regular image
+    modalImage.alt = character.name;
+    modalName.textContent = character.name;
+    modalFaction.textContent = character.occupation;
+    raceEl.textContent = character.race;
+    personalityEl.textContent = character.personality;
+    modalDescription.textContent = character.description;
+    modalBackground.textContent = character.background || 'No background information available.';
+    
+    // Update abilities
+    modalAbilities.innerHTML = '';
+    character.abilities.forEach(ability => {
+        const abilityItem = document.createElement('div');
+        abilityItem.className = 'ability-item';
+        abilityItem.innerHTML = `
+            <h4 class="ability-name">${ability.name}</h4>
+            <p class="ability-desc">${ability.desc}</p>
+        `;
+        modalAbilities.appendChild(abilityItem);
+    });
+    
+    // Update tags
+    tagsContainer.innerHTML = '';
+    character.tags.forEach(tag => {
+        const tagElement = document.createElement('span');
+        tagElement.className = 'tag';
+        tagElement.textContent = tag;
+        tagsContainer.appendChild(tagElement);
+    });
+    
+    // Update relationships
+    relationshipsList.innerHTML = '';
+    character.relationships.forEach(relation => {
+        const li = document.createElement('li');
+        li.textContent = relation;
+        relationshipsList.appendChild(li);
+    });
+    
+    // Update themes
+    themesContainer.innerHTML = '';
+    if (character.themes && character.themes.length > 0) {
+        character.themes.forEach(theme => {
+            const themeDiv = document.createElement('div');
+            themeDiv.className = 'theme-item';
+            themeDiv.innerHTML = `
+                <a href="${theme.url}" class="theme-link" target="_blank">
+                    <div class="theme-info">
+                        <div class="theme-title">${theme.title}</div>
+                        <div class="theme-description">${theme.description}</div>
+                        <div class="theme-url">
+                            <img src="https://www.youtube.com/favicon.ico" class="theme-url-icon" alt="YouTube">
+                            ${theme.url}
+                        </div>
+                    </div>
+                    <div class="theme-thumbnail" style="background-image: url('${theme.thumbnail}');"></div>
+                </a>
+            `;
+            themesContainer.appendChild(themeDiv);
+        });
+    } else {
+        themesContainer.innerHTML = '<p class="no-themes">No themes available for this character.</p>';
+    }
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
         
         // Close modal
         function closeCharacterModal() {
