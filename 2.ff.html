@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versaria - Factions</title>
+    <link rel="icon" type="image/x-icon" href="Versaria.library\images\MBE2CSW4GLAHB.info\e3d7988a77fbb7b88458cc2e8345f49a762a9e90.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+        }
+        
+        /* Faction Banner */
+        .faction-banner {
+            position: relative;
+            height: 300px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .faction-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 1 1; 
+            filter: brightness(0.7);
+        }
+        
+        .faction-banner h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            text-shadow: 3px 3px 5px black;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+        
+        /* Faction Selection */
+        .faction-selection {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .faction-carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .faction-item {
+            width: 150px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+        }
+        
+        .faction-item.grayed {
+            filter: grayscale(100%) brightness(0.5);
+        }
+        
+        .faction-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .faction-item.selected img {
+            border-color: gold;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px gold;
+        }
+        
+        .faction-item h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .faction-item p {
+            font-size: 0.8rem;
+            color: #ccc;
+            margin-top: 5px;
+        }
+        
+        .arrow {
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0 20px;
+            user-select: none;
+        }
+        
+        .arrow:hover {
+            color: gold;
+        }
+        
+        /* Characters Section */
+        .characters-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .characters-section h2 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        .character-card {
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transform: rotate(-2deg);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #444;
+            cursor: pointer;
+        }
+        
+        .character-card:nth-child(4n+2),
+        .character-card:nth-child(4n+4) {
+            transform: rotate(2deg);
+        }
+        
+        .character-card:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .character-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 2px solid #555;
+        }
+        
+        .character-card h3 {
+            margin-bottom: 5px;
+            color: gold;
+        }
+        
+        .character-card p {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+        
+        .character-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+        
+        @media (max-width: 1024px) {
+            .characters-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .character-card:nth-child(3n+2) {
+                transform: rotate(2deg);
+            }
+            
+            .character-card:nth-child(4n+2),
+            .character-card:nth-child(4n+4) {
+                transform: rotate(-2deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .faction-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .faction-item {
+                width: 100px;
+            }
+            
+            .faction-item img {
+                height: 100px;
+            }
+            
+            .characters-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .character-card {
+                transform: rotate(-2deg);
+            }
+            
+            .character-card:nth-child(even) {
+                transform: rotate(2deg);
+            }
+            
+            .character-card:nth-child(3n+2),
+            .character-card:nth-child(4n+2),
+            .character-card:nth-child(4n+4) {
+                transform: rotate(-2deg);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .characters-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .character-card {
+                transform: rotate(-1deg) !important;
+            }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #8a5a44;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b58d68;
+        }
+    </style>
+</head>
+<body>
+    <!-- Faction Banner -->
+    <section class="faction-banner">
+        <img id="banner-image" src="Versaria.library\images\M84Q08RBNUFGY.info\dfsadf.png" alt="Faction Banner">
+        <h1 id="banner-title">Abyssal Hunters</h1>
+    </section>
+    
+    <!-- Faction Selection -->
+    <section class="faction-selection">
+        <h2>Factions</h2>
+        <div class="faction-carousel">
+            <div class="arrow" id="prev-faction">❮</div>
+            
+            <div class="faction-item grayed">
+                <img src="Versaria.library\images\M7KH0OIFECMA9.info\rinotuna-.jpg" alt="Shadow Order">
+                <h3>Order</h3>
+                <p>Masters of stealth and deception.</p>
+            </div>
+            
+            <div class="faction-item grayed">
+                <img src="Versaria.library\images\MBE18KTJNDYZA.info\more-thundercloud-chan-also-by-d716e-on-x-v0-h1czlfzhdr3f1.jpg" alt="Arcane Sages">
+                <h3>Arcane Sages</h3>
+                <p>Keepers of ancient magical knowledge.</p>
+            </div>
+            
+            <div class="faction-item selected">
+                <img src="Versaria.library\images\M84Q08RBNUFGY.info\dfsadf.png" alt="The Guardians">
+                <h3>Abyssal Hunters</h3>
+                <p>Protectors of peace and justice.</p>
+            </div>
+            
+            <div class="faction-item grayed">
+                <img src="Versaria.library\images\MBE18KTJNDYZA.info\more-thundercloud-chan-also-by-d716e-on-x-v0-h1czlfzhdr3f1.jpg" alt="Iron Legion">
+                <h3>Iron Legion</h3>
+                <p>Unbreakable warriors of steel.</p>
+            </div>
+            
+            <div class="faction-item grayed">
+                <img src="Versaria.library\images\MBE18KTJNDYZA.info\more-thundercloud-chan-also-by-d716e-on-x-v0-h1czlfzhdr3f1.jpg" alt="Nature's Circle">
+                <h3>Nature's Circle</h3>
+                <p>In harmony with the natural world.</p>
+            </div>
+            
+            <div class="arrow" id="next-faction">❯</div>
+        </div>
+    </section>
+    
+    <!-- Characters -->
+    <section class="characters-section">
+        <h2>Members of <span id="current-faction">The Guardians</span></h2>
+        <div class="characters-grid" id="characters-container">
+            <!-- Characters will be populated here by JavaScript -->
+            <div class="character-card">
+                <a href="character_captain_aldric.html" class="character-link">
+                    <img src="Versaria.library\images\MBE18KTJNDYZA.info\more-thundercloud-chan-also-by-d716e-on-x-v0-h1czlfzhdr3f1.jpg" alt="Captain Aldric">
+                    <h3>Captain Aldric</h3>
+                    <p>Leader of the Guardians</p>
+                </a>
+            </div>
+            <div class="character-card">
+                <a href="character_seraphina.html" class="character-link">
+                    <img src="Versaria.library\images\MBE18KTJNDYZA.info\more-thundercloud-chan-also-by-d716e-on-x-v0-h1czlfzhdr3f1.jpg" alt="Seraphina">
+                    <h3>Seraphina</h3>
+                    <p>Divine healer</p>
+                </a>
+            </div>
+            <div class="character-card">
+                <a href="character_ironclad.html" class="character-link">
+                    <img src="Versaria.library\images\MBE18KTJNDYZA.info\more-thundercloud-chan-also-by-d716e-on-x-v0-h1czlfzhdr3f1.jpg" alt="Ironclad">
+                    <h3>Ironclad</h3>
+                    <p>Indomitable defender</p>
+                </a>
+            </div>
+            <div class="character-card">
+                <a href="character_swiftblade.html" class="character-link">
+                    <img src="Versaria.library\images\MBE18KTJNDYZA.info\more-thundercloud-chan-also-by-d716e-on-x-v0-h1czlfzhdr3f1.jpg" alt="Swiftblade">
+                    <h3>Swiftblade</h3>
+                    <p>Master of speed</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Faction data
+        const factions = [
+            {
+                name: "Abyssal Hunters",
+                banner: "Versaria.library\\images\\M84Q08RBNUFGY.info\\dfsadf.png",
+                description: "",
+                characters: [
+                    { name: "", role: "", image: "", link: "" },
+                ]
+            },
+            {
+                name: "Temple Knights",
+                banner: "Versaria.library\\images\\M6C05NXE7UL44.info\\TempleKnights.jpg",
+                description: "",
+                characters: [
+                    { name: "Levana", role: "", image: "", link: "character_levana.html" },
+                ]
+            },
+            {
+                name: "The Five Grand Royal Families",
+                banner: "Versaria.library\\images\\MBTXN08H0VF3B.info\\94991876_p0_master1200.png",
+                description: "These families run the whole country.",
+                characters: [
+                    { name: "Anissa Van Broil", role: "Second eldest daughter of the Broil family", image: "Versaria.library\\images\\MBTXLS6DQDYQP.info\\111841095_p0_master1200.png", link: "Characters/Anissa.html" },
+                    { name: "Lioene Le Broil", role: "Eldest daughter of the Broil family.", image: "Versaria.library\\images\\MBTXPF9US9SHG.info\\121130275_p1_master1200.jpg", link: "Characters/Lioene.html" },
+                    { name: "Vera Van Broil", role: "Youngest daughter of the Broil family.", image: "Versaria.library\\images\\MBTXRC4S8EI9K.info\\98721790_p0_master1200.png", link: "Characters/Vera.html" },
+                    { name: "Sinclair", role: "Royal advisor", image: "Versaria.library/images/M6C0GGL95GEMW.info/e76defd8e2db4ac71ed80eb5a6bd2489.jpg", link: "Characters/sinclair.html" },
+                    { name: "Vivian", role: "", image: "Versaria.library/images/M8M122IW23XZS.info/Vivas_ren.webp", link: "Characters/vivian.html" },
+                ]
+            },
+            {
+                name: "Order",
+                banner: "Versaria.library\\images\\M7KH0OIFECMA9.info\\rinotuna-.jpg",
+                description: "Masters of stealth and deception.",
+                characters: [
+                    { name: "", role: "", image: "", link: "" },
+                ]
+            },
+            {
+                name: "Daiga Monestary",
+                banner: "Versaria.library\\images\\MBTXP5X9NMNAU.info\\115346088_p0_master1200.jpg",
+                description: "",
+                characters: [
+                    { name: "Chae", role: "Strongest elder of the Daiga Monestary.", image: "Versaria.library\\images\\MBSYYZKYG8JG4.info\\1296300.png", link: "character_chae.html" },
+                ]
+            },
+            {
+                name: "Valkyries",
+                banner: "Versaria.library\\images\\M8Q9HCTD1094K.info\\thumb-1920-589861.jpg",
+                description: "",
+                characters: [
+                    { name: "Blake", role: "", image: "Versaria.library\\images\\M6C05INGYYPLD.info\\BlakeValkyrieOfTheDarkMoon.jpg", link: "character_blake.html" },
+                    { name: "Leone", role: "", image: "Versaria.library\\images\\M6C05GU62V070.info\\LeoneValkyrieOfTheRisingSun.jpg", link: "character_leone.html" },
+                ]
+            },
+            {
+                name: "Witches Cult",
+                banner: "",
+                description: "",
+                characters: [
+                    { name: "Domitri", role: "Dragon witch", image: "Versaria.library/images/M83F9RHO3FBZY.info/124088059_p0_master1200.png", link: "character_domitri.html" },
+                    { name: "", role: "Beast witch", image: "", link: "" },
+                ]
+            },
+        ];
+
+        // DOM elements
+        const bannerImage = document.getElementById('banner-image');
+        const bannerTitle = document.getElementById('banner-title');
+        const currentFactionSpan = document.getElementById('current-faction');
+        const charactersContainer = document.getElementById('characters-container');
+        const prevButton = document.getElementById('prev-faction');
+        const nextButton = document.getElementById('next-faction');
+        const factionItems = document.querySelectorAll('.faction-item');
+
+        // Initial state
+        let currentIndex = 2; // Starting with The Guardians (index 2)
+
+        // Update display based on current faction
+        function updateDisplay() {
+            const currentFaction = factions[currentIndex];
+            
+            // Update banner
+            bannerImage.src = currentFaction.banner;
+            bannerTitle.textContent = currentFaction.name;
+            currentFactionSpan.textContent = currentFaction.name;
+            
+            // Update faction selection carousel
+            factionItems.forEach((item, index) => {
+                item.classList.remove('selected', 'grayed');
+                
+                // Calculate the display index (wrapping around)
+                let displayIndex = (currentIndex - 2 + index) % factions.length;
+                if (displayIndex < 0) displayIndex += factions.length;
+                
+                const faction = factions[displayIndex];
+                item.querySelector('img').src = faction.banner;
+                item.querySelector('h3').textContent = faction.name;
+                item.querySelector('p').textContent = faction.description;
+                
+                if (index === 2) { // Middle item
+                    item.classList.add('selected');
+                } else {
+                    item.classList.add('grayed');
+                }
+            });
+            
+            // Update characters
+            charactersContainer.innerHTML = '';
+            currentFaction.characters.forEach(character => {
+                if (!character.name) return; // Skip empty character entries
+                
+                const characterCard = document.createElement('div');
+                characterCard.className = 'character-card';
+                
+                // Create link if character has a link
+                if (character.link) {
+                    const link = document.createElement('a');
+                    link.href = character.link;
+                    link.className = 'character-link';
+                    
+                    link.innerHTML = `
+                        <img src="${character.image}" alt="${character.name}">
+                        <h3>${character.name}</h3>
+                        <p>${character.role}</p>
+                    `;
+                    
+                    characterCard.appendChild(link);
+                } else {
+                    // If no link, just show the character info
+                    characterCard.innerHTML = `
+                        <img src="${character.image}" alt="${character.name}">
+                        <h3>${character.name}</h3>
+                        <p>${character.role}</p>
+                    `;
+                }
+                
+                charactersContainer.appendChild(characterCard);
+            });
+        }
+
+        // Navigation functions
+        function nextFaction() {
+            currentIndex = (currentIndex + 1) % factions.length;
+            updateDisplay();
+        }
+
+        function prevFaction() {
+            currentIndex = (currentIndex - 1 + factions.length) % factions.length;
+            updateDisplay();
+        }
+
+        // Event listeners
+        nextButton.addEventListener('click', nextFaction);
+        prevButton.addEventListener('click', prevFaction);
+
+        // Initialize
+        updateDisplay();
+    </script>
+</body>
+</html>

@@ -552,3 +552,131 @@ nav ul li a:hover {
     font-weight: bold;
     color: #f0c14b;
 }
+
+/* Controls Section */
+.controls-container {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.controls-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.controls-table th {
+    background: rgba(240, 193, 75, 0.2);
+    padding: 15px;
+    text-align: left;
+    font-size: 1.1rem;
+    color: #f0c14b;
+    border-bottom: 2px solid rgba(240, 193, 75, 0.3);
+}
+
+.controls-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s;
+}
+
+.controls-table tr:last-child td {
+    border-bottom: none;
+}
+
+.controls-table tr:hover td {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.controls-table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 60px; /* Always closed (only icons visible) */
+    height: calc(100vh - 80px);
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 90;
+    overflow-x: hidden;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #ddd;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.sidebar-nav li a:hover {
+    background: rgba(240, 193, 75, 0.1);
+    color: #f0c14b;
+}
+
+.sidebar-nav li a i {
+    font-size: 1.2rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+.sidebar-nav li span {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    opacity: 0; /* Text always hidden (since sidebar doesn't expand) */
+    display: none; /* Better than opacity:0 for performance */
+}
+
+.sidebar-nav li.active a {
+    background: rgba(240, 193, 75, 0.2);
+    color: #f0c14b;
+}
+
+.sidebar-nav li.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #f0c14b;
+}
+
+/* Adjust main content for sidebar */
+.container {
+    margin-left: 60px; /* Matches closed sidebar */
+    max-width: calc(100% - 80px);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 50px;
+    }
+    .container {
+        margin-left: 50px;
+        max-width: calc(100% - 60px);
+    }
+}

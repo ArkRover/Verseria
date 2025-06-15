@@ -34,6 +34,16 @@
             </nav>
         </header>
 
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#magic-mechanics"><i class="fas fa-magic"></i> <span>Magic</span></a></li>
+                <li><a href="#npc-mechanics"><i class="fas fa-robot"></i> <span>NPCs</span></a></li>
+                <li><a href="#player-mechanics"><i class="fas fa-user"></i> <span>Player</span></a></li>
+                <li><a href="#controls"><i class="fas fa-gamepad"></i> <span>Controls</span></a></li>
+            </ul>
+        </aside>
+
         <section class="hero">
             <div class="hero-content">
                 <h1>Mechanics</h1>
@@ -45,6 +55,9 @@
             <!-- Mechanics Section -->
             <section class="mechanics-section">
 
+                <main class="container">
+            <!-- Mechanics Section -->
+            <section id="magic-mechanics" class="mechanics-section">
                 <h1 class="section-title">Magic Mechanics</h1>
                 <div class="mechanics-grid">
 
@@ -111,7 +124,7 @@
                 </div>
             </section>
 
-            <section class="mechanics-section">
+            <section id="npc-mechanics" class="mechanics-section">
                 <h1 class="section-title">NPC Mechanics</h1>
                 <div class="mechanics-grid">
 
@@ -166,7 +179,7 @@
                 </div>
             </section>
 
-            <section class="mechanics-section">
+            <section id="player-mechanics" class="mechanics-section">
                 <h1 class="section-title">Player Mechanics</h1>
                 <div class="mechanics-grid">
 
@@ -205,11 +218,246 @@
                             <span class="example">Blacksmith services (proper repair): Costs gold but resets to original quality</span>
                         </div>
                     </div>
+
+                    <div class="mechanic-card">
+                        <div class="mechanic-icon">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <h2>Dynamic Fatigue</h2>
+                        <p>Characters experience accumulating exhaustion from actions, affecting performance until properly rested.</p>
+                        <div class="mechanic-examples">
+                            <span class="example">Short rest: Recovers some stamina with food/drink, but fatigue returns quickly</span>
+                            <span class="example">Full sleep: Completely resets fatigue but requires safe location and time investment</span>
+                        </div>
+                    </div>
+
+                    <div class="mechanic-card">
+                        <div class="mechanic-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h2>Directional Defense</h2>
+                        <p>Players must match their guard to attack directions, with armor materials affecting chip damage received.</p>
+                        <div class="mechanic-examples">
+                            <span class="example">Blocking: Reduces damage but suffers chip damage based on attack strength vs armor</span>
+                            <span class="example">Armor matching: Certain materials resist specific attack types better (stone vs blunt)</span>
+                        </div>
+                    </div>
+
+                    <div class="mechanic-card">
+                        <div class="mechanic-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h2>Precision Parrying</h2>
+                        <p>Timed counters create opportunities based on attack intensity (green/yellow/red indicators).</p>
+                        <div class="mechanic-examples">
+                            <span class="example">Green parry: Creates offensive openings with enemy pushback</span>
+                            <span class="example">Yellow parry: Neutralizes attack but provides no advantage</span>
+                            <span class="example">Red attacks: Must be dodged or avoided entirely</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <h1 id="controls" class="section-title">Controls</h1>
+        <div class="controls-container">
+            <table class="controls-table">
+                <thead>
+                    <tr>
+                        <th>Control</th>
+                        <th>Keyboard</th>
+                        <th>PS5</th>
+                        <th>Xbox</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Movement</td>
+                        <td>WASD</td>
+                        <td>Left Stick</td>
+                        <td>Left Stick</td>
+                    </tr>
+                    <tr>
+                        <td>Camera</td>
+                        <td>Mouse</td>
+                        <td>Right Stick</td>
+                        <td>Right Stick</td>
+                    </tr>
+                    <tr>
+                        <td>Main Menu</td>
+                        <td>Esc</td>
+                        <td>Menu Button</td>
+                        <td>Menu Button</td>
+                    </tr>
+                    <tr>
+                        <td>Chat</td>
+                        <td>Tab</td>
+                        <td>Options Button</td>
+                        <td>Options Button</td>
+                    </tr>
+                    <tr>
+                        <td>Interact</td>
+                        <td>T</td>
+                        <td>Left Stick Down</td>
+                        <td>Left Stick Down</td>
+                    </tr>
+                    <tr>
+                        <td>Aim</td>
+                        <td>Middle Mouse Button</td>
+                        <td>Right Stick Down</td>
+                        <td>Right Stick Down</td>
+                    </tr>
+                    <tr>
+                        <td>Sprint/Dodge</td>
+                        <td>Shift</td>
+                        <td>Left Trigger</td>
+                        <td>Left Trigger</td>
+                    </tr>
+                    <tr>
+                        <td>Skill 1</td>
+                        <td>1</td>
+                        <td>D-pad Up</td>
+                        <td>D-pad Up</td>
+                    </tr>
+                    <tr>
+                        <td>Skill 2</td>
+                        <td>2</td>
+                        <td>D-pad Left</td>
+                        <td>D-pad Left</td>
+                    </tr>
+                    <tr>
+                        <td>Skill 3</td>
+                        <td>3</td>
+                        <td>D-pad Down</td>
+                        <td>D-pad Down</td>
+                    </tr>
+                    <tr>
+                        <td>Skill 4</td>
+                        <td>4</td>
+                        <td>D-pad Right</td>
+                        <td>D-pad Right</td>
+                    </tr>
+                    <tr>
+                        <td>Block</td>
+                        <td>Right Mouse</td>
+                        <td>Left Bumper</td>
+                        <td>Left Bumper</td>
+                    </tr>
+                    <tr>
+                        <td>Attack 1/Counter</td>
+                        <td>Left Mouse</td>
+                        <td></td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>Jump</td>
+                        <td>Space</td>
+                        <td></td>
+                        <td>Y</td>
+                    </tr>
+                    <tr>
+                        <td>Crouch/Dive</td>
+                        <td>Ctrl</td>
+                        <td></td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>Use Item</td>
+                        <td></td>
+                        <td></td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>Switch Weapons</td>
+                        <td></td>
+                        <td>Right Trigger</td>
+                        <td>Right Trigger</td>
+                    </tr>
+                    <tr>
+                        <td>Throw</td>
+                        <td></td>
+                        <td>Right Bumper</td>
+                        <td>Right Bumper</td>
+                    </tr>
+                    <tr>
+                        <td>Switch Item</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Heavy attack</td>
+                        <td></td>
+                        <td></td>
+                        <td>Hold X</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <main>
+            <section id="player-mechanics" class="mechanics-section">
+                <h1 class="section-title">Stats</h1>
+                <div class="mechanics-grid">
+
+                    <div class="mechanic-card">
+                        <div class="mechanic-icon">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+                        <h2>Player Stats</h2>
+                        <p></p>
+                        <div class="mechanic-examples">
+                            <span class="example">Health: </span>
+                            <span class="example">Defence: </span>
+                            <span class="example">Control: </span>
+                            <span class="example">Mana pool: </span>
+                            <span class="example">Strength: </span>
+                            <span class="example"></span>
+                            <span class="example"></span>
+                            <span class="example"></span>
+                        </div>
+                    </div>
+
+                    <div class="mechanic-card">
+                        <div class="mechanic-icon">
+                            <i class="fa-solid fa-square-poll-vertical"></i>
+                        </div>
+                        <h2>Enemy Stats</h2>
+                        <p></p>
+                        <div class="mechanic-examples">
+                            <span class="example">Health: </span>
+                            <span class="example">Defence: </span>
+                            <span class="example">Toughness: </span>
+                            <span class="example">Aggresion: </span>
+                            <span class="example">Strength: </span>
+                            <span class="example"></span>
+                            <span class="example"></span>
+                            <span class="example"></span>
+                        </div>
+                    </div>
+
+                    <div class="mechanic-card">
+                        <div class="mechanic-icon">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h2>Player personality</h2>
+                        <p>Some dialogue decision shifts your alignment between virtue and sin, altering quests, alliances, and how the world judges you.</p>
+                        <div class="mechanic-examples">
+                            <span class="example">Charity (Virtue) vs Greed (Sin): Giving gold to the desperate may earn you a hidden ally; hoarding wealth could mark you as a target for thieves.</span>
+                            <span class="example">Chastity (Virtue) vs Lust (Sin): Rejecting seduction preserves honor, but indulging might unlock forbidden favors—at the cost of reputation.</span>
+                            <span class="example">Temperance (Virtue) vs Gluttony (Sin): Sharing food with allies strengthens bonds; devouring resources alone leaves others starving.</span>
+                            <span class="example">Diligence (Virtue) vs Sloth (Sin): Laboring to rebuild a village rewards you with loyalty; ignoring pleas erodes trust.</span>
+                            <span class="example">Patience (Virtue) vs Wrath (Sin): Sparing a foes life may lead to redemption; executing them ensures vengeance—but breeds new enemies.</span>
+                            <span class="example">Kindness (Virtue) vs Envy (Sin): Celebrating anothers success gains their aid; sabotaging them out of jealousy isolates you.</span>
+                            <span class="example">Humility (Virtue) vs Pride (Sin): Admitting fault earns respect; arrogant boasts provoke challenges or betrayal.</span>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
 
         <a href="https://fontawesome.com/">Icons</a>
-        <script src="magicScript.js"></script>
+        <script src="MechanicsScript.js"></script>
     </body>
 </html>
