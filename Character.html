@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Versaria - Characters</title>
-    <meta name="description" content="Explore the characters of the Versaria universe">
-    <link rel="icon" type="image/x-icon" href="Versaria.library\images\MBE2CSW4GLAHB.info\e3d7988a77fbb7b88458cc2e8345f49a762a9e90.png">
-    <link rel="stylesheet" href="CharacterStyle.css">
+    <link rel="icon" href="https://res.cloudinary.com/dlvthc4my/image/upload/v1750014282/play-lh_hmq0wg.webp" type="image/webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CharacterStyle.css">
 </head>
 <body>
     <header>
@@ -26,116 +24,239 @@
             </ul>
         </nav>
     </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Characters</h1>
-            <p>Story characters, Factions</p>
+    
+    <!-- Faction Banner -->
+    <section class="faction-banner">
+        <img id="banner-image" src="" alt="Faction Banner">
+        <h1 id="banner-title"></h1>
+    </section>
+    
+    <!-- Faction Selection -->
+    <section class="faction-selection">
+        <h2>Factions</h2>
+        <div class="faction-carousel">
+            <div class="arrow" id="prev-faction">❮</div>
+            
+            <div class="faction-item grayed">
+                <img src="" alt="">
+                <h3></h3>
+                <p></p>
+            </div>
+            
+            <div class="faction-item grayed">
+                <img src="" alt="">
+                <h3></h3>
+                <p></p>
+            </div>
+            
+            <div class="faction-item selected">
+                <img src="" alt="">
+                <h3></h3>
+                <p></p>
+            </div>
+            
+            <div class="faction-item grayed">
+                <img src="" alt="">
+                <h3></h3>
+                <p></p>
+            </div>
+            
+            <div class="faction-item grayed">
+                <img src="" alt="">
+                <h3></h3>
+                <p></p>
+            </div>
+            
+            <div class="arrow" id="next-faction">❯</div>
+        </div>
+    </section>
+    
+    <!-- Characters -->
+    <section class="characters-section">
+        <h2>Members of <span id="current-faction"></span></h2>
+        <div class="characters-grid" id="characters-container">
+            <!-- Characters will be populated here by JavaScript -->
         </div>
     </section>
 
-    <main class="main-container">
-        <div class="filters">
-            <div class="filter-group">
-                <label for="race-filter">Race</label>
-                <select id="race-filter" class="filter-select">
-                    <option value="all">All Races</option>
-                    <option value="Elven">Elven</option>
-                    <option value="Human">Human</option>
-                    <option value="Hob">Hob</option>
-                    <option value="Dragonkin">Dragonkin</option>
-                    <option value="Hybrid">Hybrid</option>
-                </select>
-            </div>
-            
-            <div class="filter-group">
-                <label for="personality-filter">Personality</label>
-                <select id="personality-filter" class="filter-select">
-                    <option value="all">All Personalities</option>
-                    <option value="Loyal">Loyal</option>
-                    <option value="Mysterious">Mysterious</option>
-                    <option value="Devoted">Devoted</option>
-                    <option value="Powerful">Powerful</option>
-                    <option value="Wise">Wise</option>
-                    <option value="Arrogant">Arrogant</option>
-                </select>
-            </div>
-            
-            <button id="reset-filters" class="filter-btn">Reset Filters</button>
-        </div>
-        
-        <div class="character-grid">
-            <!-- Character cards will be added here by JavaScript -->
-        </div>
-    
-        <div class="character-modal">
-        <div class="close-modal">&times;</div>
-        <div class="modal-content">
-            <img src="" alt="Character Full Image" class="modal-image">
-            <div class="modal-info">
-                    <h2 class="modal-name">Character Name</h2>
-                    <p class="modal-faction">Occupation</p>
-                    
-                    <div class="character-stats">
-                        <div class="stat-box">
-                            <strong>Race:</strong> <span class="race">Elven/Human</span>
-                        </div>
-                        <div class="stat-box">
-                            <strong>Personality:</strong> <span class="personality">Loyal</span>
-                        </div>
-                    </div>
-                    
-                    <div class="tags-container">
-                        <!-- Tags will be added here -->
-                    </div>
-                    
-                    <div class="modal-info-section">
-                        <h3>Description</h3>
-                        <p class="modal-description">Character description will appear here with detailed background information and story.</p>
-                    </div>
-                    
-                    <div class="modal-info-section">
-                        <h3>Background</h3>
-                        <p class="modal-background">Details about the character's history and development.</p>
-                    </div>
-                    
-                    <div class="modal-info-section">
-                        <h3>Abilities</h3>
-                        <div class="modal-abilities">
-                            <!-- Abilities will be added here -->
-                        </div>
-                    </div>
-                    
-                    <div class="modal-info-section">
-                        <h3>Relationships</h3>
-                        <ul class="relationships-list">
-                            <!-- Relationships will be added here -->
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-info-section themes-section">
-                    <h3>Themes</h3>
-                    <div class="themes-container">
-                            <!-- Themes will be added here -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
     <footer class="site-footer">
         <div class="footer-content">
-            <p>&copy; 2025 Versaria Universe. All rights reserved.</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-patreon"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Patreon"><i class="fab fa-patreon"></i></a>
+                <a href="#" title="Twitch"><i class="fab fa-twitch"></i></a>
             </div>
+            <p>&copy; 2025 Versaria Universe. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="CharacterScript.js" async defer></script>
+    <div id="character-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-character-content"></div>
+        </div>
+    </div>
+
+    <script src="characterScript.js"></script>
+    <script>
+        // DOM elements
+        const bannerImage = document.getElementById('banner-image');
+        const bannerTitle = document.getElementById('banner-title');
+        const currentFactionSpan = document.getElementById('current-faction');
+        const charactersContainer = document.getElementById('characters-container');
+        const prevButton = document.getElementById('prev-faction');
+        const nextButton = document.getElementById('next-faction');
+        const factionItems = document.querySelectorAll('.faction-item');
+        const modal = document.getElementById('character-modal');
+        const modalContent = document.getElementById('modal-character-content');
+        const closeModal = document.querySelector('.close-modal');
+
+        // Initial state
+        let currentIndex = 2; // Starting with Abyssal Hunters (index 2)
+
+        // Update the openCharacterModal function to use the characterDatabase
+        function openCharacterModal(characterId) {
+            const character = characterDatabase[characterId];
+            if (!character) {
+                console.error(`Character ${characterId} not found in database`);
+                return;
+            }
+            
+            modalContent.innerHTML = generateCharacterModal(character);
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Updated generateCharacterModal function with new layout
+        function generateCharacterModal(character) {
+    return `
+        <h1>${character.name}</h1>
+        <h2>${character.title}</h2>
+        <h3>${character.faction}</h3>
+        
+        <div class="modal-container">
+            <div class="modal-left-column">
+                <div class="modal-character-image-container">
+                    <img src="${character.image}" alt="Portrait of ${character.name}" class="modal-character-image">
+                </div>
+                <div class="character-basic-info">
+                    <p><strong>Race:</strong> ${character.race}</p>
+                    <p><strong>Gender:</strong> ${character.gender}</p>
+                    <p><strong>Personality:</strong> ${character.personality}</p>
+                    <p><strong>Primary Roles:</strong> ${Array.isArray(character.roles) ? character.roles.join(', ') : character.roles}</p>
+                </div>
+            </div>
+            
+            <div class="modal-right-column">
+                <div class="description-section">
+                    <h3>Description</h3>
+                    <p>${character.description}</p>
+                    <div class="quote">
+                        ${character.quote}
+                    </div>
+                </div>
+                
+                <div class="abilities-section">
+                    <h3>Abilities & Skills</h3>
+                    <ul>
+                        ${character.abilities.map(ability => `<li><strong>${ability.split(':')[0]}:</strong> ${ability.split(':')[1]}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="relationships-section">
+                    <h3>Key Relationships</h3>
+                    <ul>
+                        ${character.relationships.map(rel => `<li>${rel}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+        // Update the display function to use the factions and characterDatabase
+        function updateDisplay() {
+            const currentFaction = factions[currentIndex];
+            
+            // Update banner and title
+            bannerImage.src = currentFaction.banner;
+            bannerTitle.textContent = currentFaction.name;
+            currentFactionSpan.textContent = currentFaction.name;
+            
+            // Update faction carousel
+            factionItems.forEach((item, index) => {
+                item.classList.remove('selected', 'grayed');
+                
+                let displayIndex = (currentIndex - 2 + index) % factions.length;
+                if (displayIndex < 0) displayIndex += factions.length;
+                
+                const faction = factions[displayIndex];
+                item.querySelector('img').src = faction.banner;
+                item.querySelector('h3').textContent = faction.name;
+                item.querySelector('p').textContent = faction.description;
+                
+                if (index === 2) {
+                    item.classList.add('selected');
+                } else {
+                    item.classList.add('grayed');
+                }
+            });
+            
+            // Update characters grid
+            charactersContainer.innerHTML = '';
+            currentFaction.characterIds.forEach(characterId => {
+                const character = characterDatabase[characterId];
+                if (!character) return;
+                
+                const characterCard = document.createElement('div');
+                characterCard.className = 'character-card';
+                characterCard.addEventListener('click', () => openCharacterModal(characterId));
+                
+                characterCard.innerHTML = `
+                    <div class="character-element">
+                        <img src="${character.image}" alt="${character.name}">
+                        <h3>${character.name}</h3>
+                        <p>${character.title}</p>
+                    </div>
+                `;
+                
+                charactersContainer.appendChild(characterCard);
+            });
+        }
+
+        // Navigation functions
+        function nextFaction() {
+            currentIndex = (currentIndex + 1) % factions.length;
+            updateDisplay();
+        }
+
+        function prevFaction() {
+            currentIndex = (currentIndex - 1 + factions.length) % factions.length;
+            updateDisplay();
+        }
+
+        // Event listeners
+        nextButton.addEventListener('click', nextFaction);
+        prevButton.addEventListener('click', prevFaction);
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Initialize the display when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDisplay();
+        });
+    </script>
+    
 </body>
 </html>

@@ -88,10 +88,121 @@
         .entry:nth-child(odd) {
             background-color: #252525;
         }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center; /* Horizontally centers the nav */
+            align-items: center; /* Vertically centers the nav */
+        }
+
+        nav ul {
+            display: flex; /* Uses flexbox for the list */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 15px; /* Adds spacing between items */
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f0c14b;
+        }
+
+        .hero {
+            height: 50vh;
+            background: url('Versaria.library/images/MBPG5I4Q0AI1K.info/MBPG5I4A4N45N.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>Lore</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Character.html">Characters</a></li>
+                <li><a href="Creature.html">Creatures</a></li>
+                <li><a href="Customization.html">Customization</a></li>
+                <li><a href="World.html">World</a></li>
+                <li><a href="Lore.html">Lore</a></li>
+                <li><a href="Items.html">Items</a></li>
+                <li><a href="Magic.html">Magic</a></li>
+                <li><a href="Mechanics.html">Mechanics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Lore</h1>
+            <p>History</p>
+        </div>
+    </section>
+
+    <h1></h1>
     
     <div class="entry">
         <div class="entry-image">

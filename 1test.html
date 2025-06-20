@@ -1,0 +1,69 @@
+<style>
+  .mechanic-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    background: #f9f9f9;
+  }
+
+  .mechanic-icon i {
+    font-size: 24px;
+  }
+
+  .dropdown-btn {
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .mechanic-examples {
+    margin-top: 10px;
+    display: none;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .example {
+    display: block;
+    margin-bottom: 8px;
+  }
+</style>
+
+<div class="mechanic-card">
+  <div class="mechanic-icon">
+    <i class="fa-solid fa-scale-balanced"></i>
+  </div>
+  <h2>Player personality</h2>
+  
+  <button class="dropdown-btn" onclick="toggleExamples()">Show Examples</button>
+
+  <p>Some dialogue decision shifts your alignment between virtue and sin, altering quests, alliances, and how the world judges you.</p>
+
+  <div class="mechanic-examples" id="examples">
+    <span class="example">Charity (Virtue) vs Greed (Sin): Giving gold to the desperate may earn you a hidden ally; hoarding wealth could mark you as a target for thieves.</span>
+    <span class="example">Chastity (Virtue) vs Lust (Sin): Rejecting seduction preserves honor, but indulging might unlock forbidden favors—at the cost of reputation.</span>
+    <span class="example">Temperance (Virtue) vs Gluttony (Sin): Sharing food with allies strengthens bonds; devouring resources alone leaves others starving.</span>
+    <span class="example">Diligence (Virtue) vs Sloth (Sin): Laboring to rebuild a village rewards you with loyalty; ignoring pleas erodes trust.</span>
+    <span class="example">Patience (Virtue) vs Wrath (Sin): Sparing a foe's life may lead to redemption; executing them ensures vengeance—but breeds new enemies.</span>
+    <span class="example">Kindness (Virtue) vs Envy (Sin): Celebrating another's success gains their aid; sabotaging them out of jealousy isolates you.</span>
+    <span class="example">Humility (Virtue) vs Pride (Sin): Admitting fault earns respect; arrogant boasts provoke challenges or betrayal.</span>
+  </div>
+</div>
+
+<script>
+  function toggleExamples() {
+    const examples = document.getElementById("examples");
+    const btn = document.querySelector(".dropdown-btn");
+    if (examples.style.display === "none" || examples.style.display === "") {
+      examples.style.display = "block";
+      btn.textContent = "Hide Examples";
+    } else {
+      examples.style.display = "none";
+      btn.textContent = "Show Examples";
+    }
+  }
+</script>
