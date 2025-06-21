@@ -117,66 +117,6 @@
         // Initial state
         let currentIndex = 2; // Starting with Abyssal Hunters (index 2)
 
-        // Update the openCharacterModal function to use the characterDatabase
-        function openCharacterModal(characterId) {
-            const character = characterDatabase[characterId];
-            if (!character) {
-                console.error(`Character ${characterId} not found in database`);
-                return;
-            }
-            
-            modalContent.innerHTML = generateCharacterModal(character);
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Updated generateCharacterModal function with new layout
-        function generateCharacterModal(character) {
-    return `
-        <h1>${character.name}</h1>
-        <h2>${character.title}</h2>
-        <h3>${character.faction}</h3>
-        
-        <div class="modal-container">
-            <div class="modal-left-column">
-                <div class="modal-character-image-container">
-                    <img src="${character.image}" alt="Portrait of ${character.name}" class="modal-character-image">
-                </div>
-                <div class="character-basic-info">
-                    <p><strong>Race:</strong> ${character.race}</p>
-                    <p><strong>Gender:</strong> ${character.gender}</p>
-                    <p><strong>Personality:</strong> ${character.personality}</p>
-                    <p><strong>Primary Roles:</strong> ${Array.isArray(character.roles) ? character.roles.join(', ') : character.roles}</p>
-                </div>
-            </div>
-            
-            <div class="modal-right-column">
-                <div class="description-section">
-                    <h3>Description</h3>
-                    <p>${character.description}</p>
-                    <div class="quote">
-                        ${character.quote}
-                    </div>
-                </div>
-                
-                <div class="abilities-section">
-                    <h3>Abilities & Skills</h3>
-                    <ul>
-                        ${character.abilities.map(ability => `<li><strong>${ability.split(':')[0]}:</strong> ${ability.split(':')[1]}</li>`).join('')}
-                    </ul>
-                </div>
-                
-                <div class="relationships-section">
-                    <h3>Key Relationships</h3>
-                    <ul>
-                        ${character.relationships.map(rel => `<li>${rel}</li>`).join('')}
-                    </ul>
-                </div>
-            </div>
-        </div>
-    `;
-}
-
         // Update the display function to use the factions and characterDatabase
         function updateDisplay() {
             const currentFaction = factions[currentIndex];

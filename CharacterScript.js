@@ -25,6 +25,30 @@ const characterDatabase = {
             ""
         ]
     },
+    "blade": {
+        id: "blade",
+        name: "Blade",
+        title: "",
+        faction: "Abyssal Hunters",
+        image: "Versaria.library\\images\\MC2J0IMBIAIYG.info\\47ab62c5fb20c11b67133d395f5fe999.png",
+        race: "",
+        gender: "",
+        personality: "",
+        roles: [""],
+        description: "",
+        quote: "",
+        background: "",
+        abilities: [
+            "Summon: ",
+            "Rune casting: ",
+            ""
+        ],
+        relationships: [
+            "",
+            "",
+            ""
+        ]
+    },
     //#endregion
 
     //#region The Five Grand Royal Families
@@ -104,7 +128,7 @@ const characterDatabase = {
         id: "vivian",
         name: "Vivian",
         title: "",
-        faction: "",
+        faction: "The Five Grand Royal Families",
         image: "Versaria.library\\images\\M8M122IW23XZS.info\\Vivas_ren.webp",
         race: "",
         gender: "",
@@ -205,7 +229,7 @@ const characterDatabase = {
     "clive" : {
         id: "clive",
         name: "Clive",
-        title: "The Silent Blade",
+        title: "Silent Blade",
         faction: "Order",
         image: "Versaria.library\\images\\M7X3NUZSE70NU.info\\64454e5dc38081822a8024c8f682aea1.jpg",
         race: "Human (Assumed)",
@@ -254,13 +278,37 @@ const characterDatabase = {
             ""
         ]
     },
+    "kuma": {
+        id: "kuma",
+        name: "Kuma",
+        title: "",
+        faction: "Daiga Monestary",
+        image: "Versaria.library\\images\\MC2J28PH4WNQ4.info\\4657583b0d5c0037547ccc2e32d5e4c6.jpg",
+        race: "Sura",
+        gender: "",
+        personality: "",
+        roles: [""],
+        description: "",
+        quote: "",
+        background: "",
+        abilities: [
+            "Summon: ",
+            "",
+            ""
+        ],
+        relationships: [
+            "",
+            "",
+            ""
+        ]
+    },
     //#endregion
 
     //#region Witches Cult
     "domitri": {
         id: "domitri",
         name: "Domitri",
-        title: "The Dragon Witch",
+        title: "Dragon Witch",
         faction: "Witches Cult",
         image: "Versaria.library\\images\\M83F9RHO3FBZY.info\\124088059_p0_master1200.png",
         race: "Witch",
@@ -285,8 +333,32 @@ const characterDatabase = {
         id: "quinxi",
         name: "Quinxi",
         title: "Blade Witch",
-        faction: "",
+        faction: "Witches Cult",
         image: "Versaria.library\\images\\MBWDT210CW2XP.info\\e6569a5b00b5a542205c4e5a48fcdef0.jpg",
+        race: "Witch",
+        gender: "Female",
+        personality: "",
+        roles: [""],
+        description: "",
+        quote: "",
+        background: "",
+        abilities: [
+            "",
+            "",
+            ""
+        ],
+        relationships: [
+            "",
+            "",
+            ""
+        ]
+    },
+    "": {
+        id: "",
+        name: "",
+        title: "Beast Witch",
+        faction: "Witches Cult",
+        image: "Versaria.library\\images\\M81X5AFKQMH6L.info\\WhatsApp Image 2025-03-09 at 18.15.36_0455a8b9.jpg",
         race: "Witch",
         gender: "Female",
         personality: "",
@@ -315,7 +387,7 @@ const factions = [
         name: "Abyssal Hunters",
         banner: "Versaria.library\\images\\M84Q08RBNUFGY.info\\dfsadf.png",
         description: "A group of hunters that specialize in demon hunting.",
-        characterIds: ["seraphina", "ironclad", "Blade"]
+        characterIds: ["seraphina", "ironclad", "blade"]
     },
     {
         name: "The Five Grand Royal Families",
@@ -339,14 +411,15 @@ const factions = [
         name: "Daiga Monestary",
         banner: "Versaria.library\\images\\MBTXP5X9NMNAU.info\\115346088_p0_master1200.jpg",
         description: "",
-        characterIds: ["chae", ""]
+        characterIds: ["chae", "kuma"]
     },
     {
         name: "Witches Cult",
         banner: "Versaria.library\\images\\MBUPDR6LHBHFZ.info\\svetlana-belova-mini-credit-halloween-yae-ei-together.jpg",
         description: "An organization formed by witches and their followers.",
-        characterIds: ["domitri", "quinxi"]/*beast witch*/
+        characterIds: ["domitri", "quinxi"]//beast witch
     },
+    //Black Rose Knights
 ];
 
 // Updated modal content generation without stats and age
@@ -360,22 +433,21 @@ function generateCharacterModal(character) {
             <div class="modal-left-column">
                 <img src="${character.image}" alt="Portrait of ${character.name}" class="modal-character-image">
                 
-                <div class="character-basic-info">
-                    <p><strong>Race:</strong> ${character.race}</p>
-                    <p><strong>Gender:</strong> ${character.gender}</p>
-                    <p><strong>Personality:</strong> ${character.personality}</p>
-                    <p><strong>Primary Roles:</strong> ${character.roles.join(', ')}</p>
-                </div>
                 
-                <div class="info-card">
-                    <h4>Key Relationships</h4>
-                    <ul>
-                        ${character.relationships.map(rel => `<li>${rel}</li>`).join('')}
-                    </ul>
-                </div>
+                
+                
             </div>
             
             <div class="modal-right-column">
+                <section>
+                    <div class="character-basic-info">
+                        <p><strong>Race:</strong> ${character.race}</p>
+                        <p><strong>Gender:</strong> ${character.gender}</p>
+                        <p><strong>Personality:</strong> ${character.personality}</p>
+                        <p><strong>Primary Roles:</strong> ${character.roles.join(', ')}</p>
+                    </div>
+                </section>
+
                 <section>
                     <h3>Description</h3>
                     <p>${character.description}</p>
@@ -383,19 +455,28 @@ function generateCharacterModal(character) {
                     <div class="quote">
                         ${character.quote}
                     </div>
+
+                    <h3>Background</h3>
+                    <p>${character.background || "Background information is currently unavailable."}</p>
                 </section>
                 
                 <section>
-                    <h3>Background</h3>
-                    <p>${character.background}</p>
+                    <div class="info-card abilities-card">
+                        <h4>Abilities & Skills</h4>
+                        <ul>
+                            ${character.abilities.map(ability => `<li><strong>${ability.split(':')[0]}:</strong> ${ability.split(':')[1]}</li>`).join('')}
+                        </ul>
+                    </div>
                 </section>
-                
-                <div class="info-card abilities-card">
-                    <h4>Abilities & Skills</h4>
-                    <ul>
-                        ${character.abilities.map(ability => `<li><strong>${ability.split(':')[0]}:</strong> ${ability.split(':')[1]}</li>`).join('')}
-                    </ul>
-                </div>
+
+                <section>
+                    <div class="info-card">
+                        <h4>Key Relationships</h4>
+                        <ul>
+                            ${character.relationships.map(rel => `<li>${rel}</li>`).join('')}
+                        </ul>
+                    </div>
+                </section>
             </div>
         </div>
     `;
