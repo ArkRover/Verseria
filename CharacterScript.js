@@ -353,9 +353,9 @@ const characterDatabase = {
             ""
         ]
     },
-    "": {
-        id: "",
-        name: "",
+    "jura": {
+        id: "jura",
+        name: "Jura",
         title: "Beast Witch",
         faction: "Witches Cult",
         image: "Versaria.library\\images\\M81X5AFKQMH6L.info\\WhatsApp Image 2025-03-09 at 18.15.36_0455a8b9.jpg",
@@ -379,6 +379,7 @@ const characterDatabase = {
     },
     //#endregion
     //whatever in creation exists without my knowledge exists without my consent
+    //Graven witch
 };
 
 // Faction data updated to reference character IDs
@@ -417,7 +418,7 @@ const factions = [
         name: "Witches Cult",
         banner: "Versaria.library\\images\\MBUPDR6LHBHFZ.info\\svetlana-belova-mini-credit-halloween-yae-ei-together.jpg",
         description: "An organization formed by witches and their followers.",
-        characterIds: ["domitri", "quinxi"]//beast witch
+        characterIds: ["domitri", "quinxi", "jura"]
     },
     //Black Rose Knights
 ];
@@ -432,10 +433,6 @@ function generateCharacterModal(character) {
         <div class="modal-container">
             <div class="modal-left-column">
                 <img src="${character.image}" alt="Portrait of ${character.name}" class="modal-character-image">
-                
-                
-                
-                
             </div>
             
             <div class="modal-right-column">

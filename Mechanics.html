@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Versaria - Mechanics</title>
-        <meta name="description" content="Explore the magical spells and elements of our world">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="Versaria.library\images\MBH2RRWS4JDEU.info\wp12205032.png">
-        <link rel="stylesheet" href="mechanicStyle.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <meta name="description" content="Player animation controller script for Unity">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="mechanicsStyle.css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
         <header>
             <nav>
                 <ul>
@@ -34,234 +26,170 @@
             </nav>
         </header>
 
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <ul class="sidebar-nav">
-                <li><a href="#magic-mechanics"><i class="fas fa-magic"></i> <span>Magic</span></a></li>
-                <li><a href="#npc-mechanics"><i class="fas fa-robot"></i> <span>NPCs</span></a></li>
-                <li><a href="#player-mechanics"><i class="fas fa-user"></i> <span>Player</span></a></li>
-                <li><a href="#controls"><i class="fas fa-gamepad"></i> <span>Controls</span></a></li>
-            </ul>
-        </aside>
+        <div class="container">
+            <h1>Combat Mechanics</h1>
+            
+            <details>
+                <summary>Parrying</summary>
+                <p>Timed counters create opportunities based on attack intensity (green/yellow/red indicators).</p>
+                <ul>
+                    <li>Green: Creates offensive openings with enemy pushback.</li>
+                    <li>Yellow: Neutralizes attack but provides no advantage.</li>
+                    <li>Red: Must be dodged or avoided entirely.</li>
+                </ul>
+            </details>
+            
+            <details>
+                <summary>Directional Defense</summary>
+                <p>Players must match their guard to attack directions, with armor materials affecting chip damage received based on attack intensity (green/yellow/red indicators).</p>
+                <ul>
+                    <li>Green: No chip damage.</li>
+                    <li>Yellow: Little chip damage.</li>
+                    <li>Red: High chip damage.</li>
+                </ul>
+            </details>
+            
+            <details>
+                <summary>Dynamic Fame System</summary>
+                <p>Your reputation changes based on deeds, decisions, and discoveries, opening unique opportunities as you become recognized across the world.</p>
+                <ul>
+                    <li>Slaying a legendary beast causes taverns to serve you free drinks, but also attracts bounty hunters seeking to claim your head.</li>
+                    <li>Repeatedly helping a faction may make their enemies hostile on sight when they recognize your insignia.</li>
+                </ul>
+            </details>
+            
+            <details>
+                <summary>Encumbrance</summary>
+                <p>Every item has realistic weight, forcing strategic choices about gear and loot. Exceeding limits impacts mobility, stamina, and combat effectiveness.</p>
+                <ul>
+                    <li>Carrying too much ore from the mines or wearing heavy armour? Your dodge roll becomes a slow stumble that costs extra stamina.</li>
+                </ul>
+            </details>
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Mechanics</h1>
+            <details>
+                <summary>Degrading Arsenal</summary>
+                <p>Weapons gradually lose effectiveness rather than breaking suddenly, with multiple repair options available.</p>
+                <ul>
+                    <li>Battlefield repairs (quick fix): Restores 60% durability but lowers max condition.</li>
+                    <li>Blacksmith services (proper repair): Costs gold but resets to original quality.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Stamina</summary>
                 <p></p>
-            </div>
-        </section>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </details>
 
-        <main class="container">
-            <!-- Mechanics Section -->
-            <section class="mechanics-section">
+            <details>
+                <summary>Classes</summary>
+                <p>Each player's class depends on what skill and stats they have.</p>
+                <ul>
+                    <li>Swordsman: </li>
+                    <li>Theif: </li>
+                    <li>Assassin: </li>
+                    <li>Monk: </li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </details>
 
-                <main class="container">
-            <!-- Mechanics Section -->
-            <section id="magic-mechanics" class="mechanics-section">
-                <h1 class="section-title">Magic Mechanics</h1>
-                <div class="mechanics-grid">
+            <details>
+                <summary>Weapon system</summary>
+                <p>The player has three weapon slots with any two being able to be used at the same time unless the player doesn't have enoph strength for the weapon weight.</p>
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </details>
+        </div>
 
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fas fa-wand-magic-sparkles"></i>
-                        </div>
-                        <h2>Spell Construction</h2>
-                        <p>Combine two or more spells to create powerful new magical effects, limitations and abilities.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Fire + Wind = Flame Tornado</span>
-                            <span class="example">Water + Earth = Mudslide</span>
-                        </div>
-                    </div>
-                    
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fas fa-hand-sparkles"></i>
-                        </div>
-                        <h2>Elemental Synergy</h2>
-                        <p>Certain elements work exceptionally well together, creating enhanced effects when combined in sequence or simultaneously.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Water then Lightning = Electrocution</span>
-                            <span class="example">Earth then Fire = Lava</span>
-                        </div>
-                    </div>
-                    
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-book-tanakh"></i>
-                        </div>
-                        <h2>Mana Management</h2>
-                        <p>Each spell consumes mana based on its complexity and power. Efficient casting requires careful resource allocation.</p>
-                        <div class="mechanic-details">
-                            <div class="detail">
-                                <span class="detail-label">Basic Spell:</span>
-                                <span class="detail-value">10-30 MP</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">Combined Spell:</span>
-                                <span class="detail-value">40-80 MP</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fas fa-hourglass-half"></i>
-                        </div>
-                        <h2>Cooldown System</h2>
-                        <p>Powerful spells require time to recharge. Strategic spell rotation is key to maintaining magical effectiveness in combat.</p>
-                        <div class="mechanic-details">
-                            <div class="detail">
-                                <span class="detail-label">Basic Cooldown:</span>
-                                <span class="detail-value">2-5 seconds</span>
-                            </div>
-                            <div class="detail">
-                                <span class="detail-label">Ultimate Cooldown:</span>
-                                <span class="detail-value">30-60 seconds</span>
-                            </div>
-                        </div>
-                    </div>
+        <div class="container">
+            <h1>NPC Mechanics</h1>
 
-                </div>
-            </section>
+            <details>
+                <summary>Dynamic NPC Reactions</summary>
+                <p>NPCs react authentically to the player based on clothing, actions, and their own personalities, creating immersive social interactions.</p>
+                <ul>
+                    <li>A conservative priest might scold you for wearing revealing armor in temple grounds.</li>
+                    <li>Merchants offer better prices if you're dressed like nobility.</li>
+                </ul>
+            </details>
 
-            <section id="npc-mechanics" class="mechanics-section">
-                <h1 class="section-title">NPC Mechanics</h1>
-                <div class="mechanics-grid">
+            <details>
+                <summary>Adaptive Combat AI</summary>
+                <p>Enemies learn from your fighting style and adjust their tactics mid-battle to counter your strategies.</p>
+                <ul>
+                    <li>Overusing fire spells? Enemies start carrying potions of fire resistance.</li>
+                    <li>If you rely on parrying, foes may switch to unblockable attacks.</li>
+                </ul>
+            </details>
 
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-person-harassing"></i>
-                        </div>
-                        <h2>Dynamic NPC Reactions</h2>
-                        <p>NPCs react authentically to the player based on clothing, actions, and their own personalities, creating immersive social interactions.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">A conservative priest might scold you for wearing revealing armor in temple grounds.</span>
-                            <span class="example">Merchants offer better prices if you're dressed like nobility.</span>
-                        </div>
-                    </div>
+            <details>
+                <summary>Aggro</summary>
+                <p>Each player has a dynamic threat level that influences enemy targeting. Enemies prioritize the highest-threat player, while smarter foes adjust tactics—such as using area attacks when multiple high-threat players are clustered together.</p>
+                <ul>
+                    <li>Dealing high damage increases threat.</li>
+                    <li>Healing allies frequently draws enemy attention.</li>
+                </ul>
+            </details>
 
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-shield-dog"></i>
-                        </div>
-                        <h2>Adaptive Combat AI</h2>
-                        <p>Enemies learn from your fighting style and adjust their tactics mid-battle to counter your strategies.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Overusing fire spells? Enemies start carrying potions of fire resistance.</span>
-                            <span class="example">If you rely on parrying, foes may switch to unblockable attacks.</span>
-                        </div>
-                    </div>
+            <details>
+                <summary>Pack Tactics</summary>
+                <p>Enemies coordinate attacks when fighting in groups, using flanking maneuvers and combined abilities to overwhelm solitary fighters.</p>
+                <ul>
+                    <li>Wolfpacks alternate between distraction attacks and pouncing from behind.</li>
+                    <li>Bandit archers provide covering fire while melee fighters advance.</li>
+                </ul>
+            </details>
+        </div>
 
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-                        <h2>Aggro</h2>
-                        <p>Each player has a dynamic threat level that influences enemy targeting. Enemies prioritize the highest-threat player, while smarter foes adjust tactics—such as using area attacks when multiple high-threat players are clustered together.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Dealing high damage increases threat.</span>
-                            <span class="example">Healing allies frequently draws enemy attention.</span>
-                        </div>
-                    </div>
+        <div class="container">
+            <h1>Magic Mechanics</h1>
 
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-people-group"></i>
-                        </div>
-                        <h2>Pack Tactics</h2>
-                        <p>Enemies coordinate attacks when fighting in groups, using flanking maneuvers and combined abilities to overwhelm solitary fighters.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Wolfpacks alternate between distraction attacks and pouncing from behind.</span>
-                            <span class="example">Bandit archers provide covering fire while melee fighters advance.</span>
-                        </div>
-                    </div>
-                    
-                </div>
-            </section>
+            <details>
+                <summary>Spell Construction</summary>
+                <p>Combine two or more spells to create powerful new magical effects, limitations and abilities.</p>
+                <ul>
+                    <li>Fire + Wind = Flame Tornado</li>
+                    <li>Water + Earth = Mudslide</li>
+                </ul>
+            </details>
+            
+            <details>
+                <summary>Elemental Synergy</summary>
+                <p>Certain elements work exceptionally well together, creating enhanced effects when combined in sequence or simultaneously.</p>
+                <ul>
+                    <li>Water then Lightning = Electrocution</li>
+                    <li>Earth then Fire = Lava</li>
+                </ul>
+            </details>
 
-            <section id="player-mechanics" class="mechanics-section">
-                <h1 class="section-title">Player Mechanics</h1>
-                <div class="mechanics-grid">
+            <details>
+                <summary>Mana Management</summary>
+                <p>Each spell consumes mana based on its complexity and power. Efficient casting requires careful resource allocation.</p>
+                <ul>
+                    <li>Basic Spell: 10-30 MP</li>
+                    <li>Combined Spell: 40-80 MP</li>
+                </ul>
+            </details>
+            
+            <details>
+                <summary>Cooldown System</summary>
+                <p>Powerful spells require time to recharge. Strategic spell rotation is key to maintaining magical effectiveness in combat.</p>
+                <ul>
+                    <li>Basic Cooldown: 2-5 seconds</li>
+                    <li>Ultimate Cooldown: 30-60 seconds</li>
+                </ul>
+            </details>
+        </div>
 
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-crown"></i>
-                        </div>
-                        <h2>Dynamic Fame System</h2>
-                        <p>Your reputation evolves based on deeds, decisions, and discoveries, opening unique opportunities as you become recognized across the world.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Slaying a legendary beast causes taverns to serve you free drinks, but also attracts bounty hunters seeking to claim your head.</span>
-                            <span class="example">Repeatedly helping a faction may make their enemies hostile on sight when they recognize your insignia.</span>
-                        </div>
-                    </div>
-                    
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-weight-hanging"></i>
-                        </div>
-                        <h2>Encumbrance</h2>
-                        <p>Every item has realistic weight, forcing strategic choices about gear and loot. Exceeding limits impacts mobility, stamina, and combat effectiveness.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Carrying too much ore from the mines? Your dodge roll becomes a slow stumble that costs extra stamina.</span>
-                            <span class="example">Opting for heavy plate armor? Expect slower spellcasting as you struggle with restricted movement.</span>
-                        </div>
-                    </div>
-
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-hammer"></i>
-                        </div>
-                        <h2>Degrading Arsenal</h2>
-                        <p>Weapons gradually lose effectiveness rather than breaking suddenly, with multiple repair options available.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Battlefield repairs (quick fix): Restores 60% durability but lowers max condition</span>
-                            <span class="example">Blacksmith services (proper repair): Costs gold but resets to original quality</span>
-                        </div>
-                    </div>
-
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-bed"></i>
-                        </div>
-                        <h2>Dynamic Fatigue</h2>
-                        <p>Characters experience accumulating exhaustion from actions, affecting performance until properly rested.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Short rest: Recovers some stamina with food/drink, but fatigue returns quickly</span>
-                            <span class="example">Full sleep: Completely resets fatigue but requires safe location and time investment</span>
-                        </div>
-                    </div>
-
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <h2>Directional Defense</h2>
-                        <p>Players must match their guard to attack directions, with armor materials affecting chip damage received.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Blocking: Reduces damage but suffers chip damage based on attack strength vs armor</span>
-                            <span class="example">Armor matching: Certain materials resist specific attack types better (stone vs blunt)</span>
-                        </div>
-                    </div>
-
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-clock"></i>
-                        </div>
-                        <h2>Precision Parrying</h2>
-                        <p>Timed counters create opportunities based on attack intensity (green/yellow/red indicators).</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Green parry: Creates offensive openings with enemy pushback</span>
-                            <span class="example">Yellow parry: Neutralizes attack but provides no advantage</span>
-                            <span class="example">Red attacks: Must be dodged or avoided entirely</span>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-        </main>
-
-        <h1 id="controls" class="section-title">Controls</h1>
-        <div class="controls-container">
+        <div class="container">
+            <h1>Controls</h1>
             <table class="controls-table">
                 <thead>
                     <tr>
@@ -395,69 +323,5 @@
                 </tbody>
             </table>
         </div>
-
-        <main>
-            <section id="player-mechanics" class="mechanics-section">
-                <h1 class="section-title">Stats</h1>
-                <div class="mechanics-grid">
-
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-chart-simple"></i>
-                        </div>
-                        <h2>Player Stats</h2>
-                        <p></p>
-                        <div class="mechanic-examples">
-                            <span class="example">Health: </span>
-                            <span class="example">Defence: </span>
-                            <span class="example">Control: </span>
-                            <span class="example">Mana pool: </span>
-                            <span class="example">Strength: </span>
-                            <span class="example"></span>
-                            <span class="example"></span>
-                            <span class="example"></span>
-                        </div>
-                    </div>
-
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-square-poll-vertical"></i>
-                        </div>
-                        <h2>Enemy Stats</h2>
-                        <p></p>
-                        <div class="mechanic-examples">
-                            <span class="example">Health: </span>
-                            <span class="example">Defence: </span>
-                            <span class="example">Toughness: </span>
-                            <span class="example">Aggresion: </span>
-                            <span class="example">Strength: </span>
-                            <span class="example"></span>
-                            <span class="example"></span>
-                            <span class="example"></span>
-                        </div>
-                    </div>
-
-                    <div class="mechanic-card">
-                        <div class="mechanic-icon">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                        <h2>Player personality</h2>
-                        <p>Some dialogue decision shifts your alignment between virtue and sin, altering quests, alliances, and how the world judges you.</p>
-                        <div class="mechanic-examples">
-                            <span class="example">Charity (Virtue) vs Greed (Sin): Giving gold to the desperate may earn you a hidden ally; hoarding wealth could mark you as a target for thieves.</span>
-                            <span class="example">Chastity (Virtue) vs Lust (Sin): Rejecting seduction preserves honor, but indulging might unlock forbidden favors—at the cost of reputation.</span>
-                            <span class="example">Temperance (Virtue) vs Gluttony (Sin): Sharing food with allies strengthens bonds; devouring resources alone leaves others starving.</span>
-                            <span class="example">Diligence (Virtue) vs Sloth (Sin): Laboring to rebuild a village rewards you with loyalty; ignoring pleas erodes trust.</span>
-                            <span class="example">Patience (Virtue) vs Wrath (Sin): Sparing a foes life may lead to redemption; executing them ensures vengeance—but breeds new enemies.</span>
-                            <span class="example">Kindness (Virtue) vs Envy (Sin): Celebrating anothers success gains their aid; sabotaging them out of jealousy isolates you.</span>
-                            <span class="example">Humility (Virtue) vs Pride (Sin): Admitting fault earns respect; arrogant boasts provoke challenges or betrayal.</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <a href="https://fontawesome.com/">Icons</a>
-        <script src="MechanicsScript.js"></script>
     </body>
 </html>
