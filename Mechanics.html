@@ -26,302 +26,353 @@
             </nav>
         </header>
 
-        <div class="container">
-            <h1>Combat Mechanics</h1>
-            
-            <details>
-                <summary>Parrying</summary>
-                <p>Timed counters create opportunities based on attack intensity (green/yellow/red indicators).</p>
+        <div class="content-container">
+            <div class="sidebar">
+                <h2>Combat Mechanics</h2>
                 <ul>
-                    <li>Green: Creates offensive openings with enemy pushback.</li>
-                    <li>Yellow: Neutralizes attack but provides no advantage.</li>
-                    <li>Red: Must be dodged or avoided entirely.</li>
+                    <li class="active" data-mechanic="defensiveoptions">Defensive Options</li>
+                    <li data-mechanic="dynamic-fame">Dynamic Fame System</li>
+                    <li data-mechanic="encumbrance">Encumbrance</li>
+                    <li data-mechanic="degrading-arsenal">Degrading Arsenal</li>
+                    <li data-mechanic="stamina">Stamina</li>
+                    <li data-mechanic="classes">Classes</li>
+                    <li data-mechanic="weapon-system">Weapon System</li>
                 </ul>
-            </details>
-            
-            <details>
-                <summary>Directional Defense</summary>
-                <p>Players must match their guard to attack directions, with armor materials affecting chip damage received based on attack intensity (green/yellow/red indicators).</p>
-                <ul>
-                    <li>Green: No chip damage.</li>
-                    <li>Yellow: Little chip damage.</li>
-                    <li>Red: High chip damage.</li>
-                </ul>
-            </details>
-            
-            <details>
-                <summary>Dynamic Fame System</summary>
-                <p>Your reputation changes based on deeds, decisions, and discoveries, opening unique opportunities as you become recognized across the world.</p>
-                <ul>
-                    <li>Slaying a legendary beast causes taverns to serve you free drinks, but also attracts bounty hunters seeking to claim your head.</li>
-                    <li>Repeatedly helping a faction may make their enemies hostile on sight when they recognize your insignia.</li>
-                </ul>
-            </details>
-            
-            <details>
-                <summary>Encumbrance</summary>
-                <p>Every item has realistic weight, forcing strategic choices about gear and loot. Exceeding limits impacts mobility, stamina, and combat effectiveness.</p>
-                <ul>
-                    <li>Carrying too much ore from the mines or wearing heavy armour? Your dodge roll becomes a slow stumble that costs extra stamina.</li>
-                </ul>
-            </details>
 
-            <details>
-                <summary>Degrading Arsenal</summary>
-                <p>Weapons gradually lose effectiveness rather than breaking suddenly, with multiple repair options available.</p>
+                <h2>NPC Mechanics</h2>
                 <ul>
-                    <li>Battlefield repairs (quick fix): Restores 60% durability but lowers max condition.</li>
-                    <li>Blacksmith services (proper repair): Costs gold but resets to original quality.</li>
+                    <li data-mechanic="dynamic-npc-reactions">Dynamic NPC Reactions</li>
+                    <li data-mechanic="adaptive-combat-ai">Adaptive Combat AI</li>
+                    <li data-mechanic="aggro">Aggro</li>
+                    <li data-mechanic="pack-tactics">Pack Tactics</li>
                 </ul>
-            </details>
 
-            <details>
-                <summary>Stamina</summary>
-                <p></p>
+                <h2>Magic Mechanics</h2>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li data-mechanic="spell-construction">Spell Construction</li>
+                    <li data-mechanic="elemental-synergy">Elemental Synergy</li>
+                    <li data-mechanic="mana-management">Mana Management</li>
+                    <li data-mechanic="cooldown-system">Cooldown System</li>
                 </ul>
-            </details>
 
-            <details>
-                <summary>Classes</summary>
-                <p>Each player's class depends on what skill and stats they have.</p>
+                <h2>Controls</h2>
                 <ul>
-                    <li>Swordsman: </li>
-                    <li>Theif: </li>
-                    <li>Assassin: </li>
-                    <li>Monk: </li>
-                    <li></li>
-                    <li></li>
+                    <li data-mechanic="controls">Controls</li>
                 </ul>
-            </details>
+            </div>
 
-            <details>
-                <summary>Weapon system</summary>
-                <p>The player has three weapon slots with any two being able to be used at the same time unless the player doesn't have enoph strength for the weapon weight.</p>
-                <ul>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </details>
+            <div class="mechanic-content">
+                <!-- Combat Mechanics -->
+                <div id="defensiveoptions" class="mechanic-details active">
+                    <h3>Defensive Options</h3>
+                    <p>Parry vs Block vs Dodge</p>
+                    <p>Timed counters create opportunities based on attack intensity (green/yellow/red indicators).</p>
+                    <ul>
+                        <li>Green: Creates offensive openings with enemy pushback.</li>
+                        <li>Yellow: Neutralizes attack but provides no advantage.</li>
+                        <li>Red: Must be dodged or avoided entirely.</li>
+                    </ul>
+                    <p>Players must match their guard to attack directions, with armor materials affecting chip damage received based on attack intensity (green/yellow/red indicators).</p>
+                    <ul>
+                        <li>Green: No chip damage.</li>
+                        <li>Yellow: Little chip damage.</li>
+                        <li>Red: High chip damage.</li>
+                    </ul>
+                    <p>Dodging of course garentees no damage but there is a stamina bar, when out of stamina the player cannot dodge until it has regenerated enough.</p>
+                </div>
+                
+                <div id="dynamic-fame" class="mechanic-details">
+                    <h3>Dynamic Fame System</h3>
+                    <p>Your reputation changes based on deeds, decisions, and discoveries, opening unique opportunities as you become recognized across the world.</p>
+                    <ul>
+                        <li>Slaying a legendary beast causes taverns to serve you free drinks, but also attracts bounty hunters seeking to claim your head.</li>
+                        <li>Repeatedly helping a faction may make their enemies hostile on sight when they recognize your insignia.</li>
+                    </ul>
+                </div>
+                
+                <div id="encumbrance" class="mechanic-details">
+                    <h3>Encumbrance</h3>
+                    <p>Every item has realistic weight, forcing strategic choices about gear and loot. Exceeding limits impacts mobility, stamina, and combat effectiveness.</p>
+                    <ul>
+                        <li>Carrying too much ore from the mines or wearing heavy armour? Your dodge roll becomes a slow stumble that costs extra stamina.</li>
+                    </ul>
+                </div>
+
+                <div id="degrading-arsenal" class="mechanic-details">
+                    <h3>Degrading Arsenal</h3>
+                    <p>Weapons gradually lose effectiveness rather than breaking suddenly, with multiple repair options available.</p>
+                    <ul>
+                        <li>Battlefield repairs (quick fix): Restores 60% durability but lowers max condition.</li>
+                        <li>Blacksmith services (proper repair): Costs gold but resets to original quality.</li>
+                    </ul>
+                </div>
+
+                <div id="stamina" class="mechanic-details">
+                    <h3>Stamina</h3>
+                    <p></p>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+
+                <div id="classes" class="mechanic-details">
+                    <h3>Classes</h3>
+                    <p>Each player's class depends on what skill and stats they have.</p>
+                    <ul>
+                        <li>Swordsman: </li>
+                        <li>Theif: </li>
+                        <li>Assassin: </li>
+                        <li>Monk: </li>
+                    </ul>
+                </div>
+
+                <div id="weapon-system" class="mechanic-details">
+                    <h3>Weapon system</h3>
+                    <p>The player has three weapon slots with any two being able to be used at the same time unless the player doesn't have enoph strength for the weapon weight.</p>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+
+                <!-- NPC Mechanics -->
+                <div id="dynamic-npc-reactions" class="mechanic-details">
+                    <h3>Dynamic NPC Reactions</h3>
+                    <p>NPCs react authentically to the player based on clothing, actions, and their own personalities, creating immersive social interactions.</p>
+                    <ul>
+                        <li>A conservative priest might scold you for wearing revealing armor in temple grounds.</li>
+                        <li>Merchants offer better prices if you're dressed like nobility.</li>
+                    </ul>
+                </div>
+
+                <div id="adaptive-combat-ai" class="mechanic-details">
+                    <h3>Adaptive Combat AI</h3>
+                    <p>Enemies learn from your fighting style and adjust their tactics mid-battle to counter your strategies.</p>
+                    <ul>
+                        <li>Overusing fire spells? Enemies start carrying potions of fire resistance.</li>
+                        <li>If you rely on parrying, foes may switch to unblockable attacks.</li>
+                    </ul>
+                </div>
+
+                <div id="aggro" class="mechanic-details">
+                    <h3>Aggro</h3>
+                    <p>Each player has a dynamic threat level that influences enemy targeting. Enemies prioritize the highest-threat player, while smarter foes adjust tactics—such as using area attacks when multiple high-threat players are clustered together.</p>
+                    <ul>
+                        <li>Dealing high damage increases threat.</li>
+                        <li>Healing allies frequently draws enemy attention.</li>
+                    </ul>
+                </div>
+
+                <div id="pack-tactics" class="mechanic-details">
+                    <h3>Pack Tactics</h3>
+                    <p>Enemies coordinate attacks when fighting in groups, using flanking maneuvers and combined abilities to overwhelm solitary fighters.</p>
+                    <ul>
+                        <li>Wolfpacks alternate between distraction attacks and pouncing from behind.</li>
+                        <li>Bandit archers provide covering fire while melee fighters advance.</li>
+                    </ul>
+                </div>
+
+                <!-- Magic Mechanics -->
+                <div id="spell-construction" class="mechanic-details">
+                    <h3>Spell Construction</h3>
+                    <p>Combine two or more spells to create powerful new magical effects, limitations and abilities.</p>
+                    <ul>
+                        <li>Fire + Wind = Flame Tornado</li>
+                        <li>Water + Earth = Mudslide</li>
+                    </ul>
+                </div>
+                
+                <div id="elemental-synergy" class="mechanic-details">
+                    <h3>Elemental Synergy</h3>
+                    <p>Certain elements work exceptionally well together, creating enhanced effects when combined in sequence or simultaneously.</p>
+                    <ul>
+                        <li>Water then Lightning = Electrocution</li>
+                        <li>Earth then Fire = Lava</li>
+                    </ul>
+                </div>
+
+                <div id="mana-management" class="mechanic-details">
+                    <h3>Mana Management</h3>
+                    <p>Each spell consumes mana based on its complexity and power. Efficient casting requires careful resource allocation.</p>
+                    <ul>
+                        <li>Basic Spell: 10-30 MP</li>
+                        <li>Combined Spell: 40-80 MP</li>
+                    </ul>
+                </div>
+                
+                <div id="cooldown-system" class="mechanic-details">
+                    <h3>Cooldown System</h3>
+                    <p>Powerful spells require time to recharge. Strategic spell rotation is key to maintaining magical effectiveness in combat.</p>
+                    <ul>
+                        <li>Basic Cooldown: 2-5 seconds</li>
+                        <li>Ultimate Cooldown: 30-60 seconds</li>
+                    </ul>
+                </div>
+
+                <!-- Controls -->
+                <div id="controls" class="mechanic-details">
+                    <h3>Controls</h3>
+                    <table class="controls-table">
+                        <thead>
+                            <tr>
+                                <th>Control</th>
+                                <th>Keyboard</th>
+                                <th>PS5</th>
+                                <th>Xbox</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Movement</td>
+                                <td>WASD</td>
+                                <td>Left Stick</td>
+                                <td>Left Stick</td>
+                            </tr>
+                            <tr>
+                                <td>Camera</td>
+                                <td>Mouse</td>
+                                <td>Right Stick</td>
+                                <td>Right Stick</td>
+                            </tr>
+                            <tr>
+                                <td>Main Menu</td>
+                                <td>Esc</td>
+                                <td>Menu Button</td>
+                                <td>Menu Button</td>
+                            </tr>
+                            <tr>
+                                <td>Chat</td>
+                                <td>Tab</td>
+                                <td>Options Button</td>
+                                <td>Options Button</td>
+                            </tr>
+                            <tr>
+                                <td>Interact</td>
+                                <td>T</td>
+                                <td>Left Stick Down</td>
+                                <td>Left Stick Down</td>
+                            </tr>
+                            <tr>
+                                <td>Aim</td>
+                                <td>Middle Mouse Button</td>
+                                <td>Right Stick Down</td>
+                                <td>Right Stick Down</td>
+                            </tr>
+                            <tr>
+                                <td>Sprint/Dodge</td>
+                                <td>Shift</td>
+                                <td>Left Trigger</td>
+                                <td>Left Trigger</td>
+                            </tr>
+                            <tr>
+                                <td>Skill 1</td>
+                                <td>1</td>
+                                <td>D-pad Up</td>
+                                <td>D-pad Up</td>
+                            </tr>
+                            <tr>
+                                <td>Skill 2</td>
+                                <td>2</td>
+                                <td>D-pad Left</td>
+                                <td>D-pad Left</td>
+                            </tr>
+                            <tr>
+                                <td>Skill 3</td>
+                                <td>3</td>
+                                <td>D-pad Down</td>
+                                <td>D-pad Down</td>
+                            </tr>
+                            <tr>
+                                <td>Skill 4</td>
+                                <td>4</td>
+                                <td>D-pad Right</td>
+                                <td>D-pad Right</td>
+                            </tr>
+                            <tr>
+                                <td>Block</td>
+                                <td>Right Mouse</td>
+                                <td>Left Bumper</td>
+                                <td>Left Bumper</td>
+                            </tr>
+                            <tr>
+                                <td>Attack 1/Counter</td>
+                                <td>Left Mouse</td>
+                                <td></td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <td>Jump</td>
+                                <td>Space</td>
+                                <td></td>
+                                <td>Y</td>
+                            </tr>
+                            <tr>
+                                <td>Crouch/Dive</td>
+                                <td>Ctrl</td>
+                                <td></td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Use Item</td>
+                                <td></td>
+                                <td></td>
+                                <td>B</td>
+                            </tr>
+                            <tr>
+                                <td>Switch Weapons</td>
+                                <td></td>
+                                <td>Right Trigger</td>
+                                <td>Right Trigger</td>
+                            </tr>
+                            <tr>
+                                <td>Throw</td>
+                                <td></td>
+                                <td>Right Bumper</td>
+                                <td>Right Bumper</td>
+                            </tr>
+                            <tr>
+                                <td>Switch Item</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Heavy attack</td>
+                                <td></td>
+                                <td></td>
+                                <td>Hold X</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
-        <div class="container">
-            <h1>NPC Mechanics</h1>
-
-            <details>
-                <summary>Dynamic NPC Reactions</summary>
-                <p>NPCs react authentically to the player based on clothing, actions, and their own personalities, creating immersive social interactions.</p>
-                <ul>
-                    <li>A conservative priest might scold you for wearing revealing armor in temple grounds.</li>
-                    <li>Merchants offer better prices if you're dressed like nobility.</li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Adaptive Combat AI</summary>
-                <p>Enemies learn from your fighting style and adjust their tactics mid-battle to counter your strategies.</p>
-                <ul>
-                    <li>Overusing fire spells? Enemies start carrying potions of fire resistance.</li>
-                    <li>If you rely on parrying, foes may switch to unblockable attacks.</li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Aggro</summary>
-                <p>Each player has a dynamic threat level that influences enemy targeting. Enemies prioritize the highest-threat player, while smarter foes adjust tactics—such as using area attacks when multiple high-threat players are clustered together.</p>
-                <ul>
-                    <li>Dealing high damage increases threat.</li>
-                    <li>Healing allies frequently draws enemy attention.</li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Pack Tactics</summary>
-                <p>Enemies coordinate attacks when fighting in groups, using flanking maneuvers and combined abilities to overwhelm solitary fighters.</p>
-                <ul>
-                    <li>Wolfpacks alternate between distraction attacks and pouncing from behind.</li>
-                    <li>Bandit archers provide covering fire while melee fighters advance.</li>
-                </ul>
-            </details>
-        </div>
-
-        <div class="container">
-            <h1>Magic Mechanics</h1>
-
-            <details>
-                <summary>Spell Construction</summary>
-                <p>Combine two or more spells to create powerful new magical effects, limitations and abilities.</p>
-                <ul>
-                    <li>Fire + Wind = Flame Tornado</li>
-                    <li>Water + Earth = Mudslide</li>
-                </ul>
-            </details>
-            
-            <details>
-                <summary>Elemental Synergy</summary>
-                <p>Certain elements work exceptionally well together, creating enhanced effects when combined in sequence or simultaneously.</p>
-                <ul>
-                    <li>Water then Lightning = Electrocution</li>
-                    <li>Earth then Fire = Lava</li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Mana Management</summary>
-                <p>Each spell consumes mana based on its complexity and power. Efficient casting requires careful resource allocation.</p>
-                <ul>
-                    <li>Basic Spell: 10-30 MP</li>
-                    <li>Combined Spell: 40-80 MP</li>
-                </ul>
-            </details>
-            
-            <details>
-                <summary>Cooldown System</summary>
-                <p>Powerful spells require time to recharge. Strategic spell rotation is key to maintaining magical effectiveness in combat.</p>
-                <ul>
-                    <li>Basic Cooldown: 2-5 seconds</li>
-                    <li>Ultimate Cooldown: 30-60 seconds</li>
-                </ul>
-            </details>
-        </div>
-
-        <div class="container">
-            <h1>Controls</h1>
-            <table class="controls-table">
-                <thead>
-                    <tr>
-                        <th>Control</th>
-                        <th>Keyboard</th>
-                        <th>PS5</th>
-                        <th>Xbox</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Movement</td>
-                        <td>WASD</td>
-                        <td>Left Stick</td>
-                        <td>Left Stick</td>
-                    </tr>
-                    <tr>
-                        <td>Camera</td>
-                        <td>Mouse</td>
-                        <td>Right Stick</td>
-                        <td>Right Stick</td>
-                    </tr>
-                    <tr>
-                        <td>Main Menu</td>
-                        <td>Esc</td>
-                        <td>Menu Button</td>
-                        <td>Menu Button</td>
-                    </tr>
-                    <tr>
-                        <td>Chat</td>
-                        <td>Tab</td>
-                        <td>Options Button</td>
-                        <td>Options Button</td>
-                    </tr>
-                    <tr>
-                        <td>Interact</td>
-                        <td>T</td>
-                        <td>Left Stick Down</td>
-                        <td>Left Stick Down</td>
-                    </tr>
-                    <tr>
-                        <td>Aim</td>
-                        <td>Middle Mouse Button</td>
-                        <td>Right Stick Down</td>
-                        <td>Right Stick Down</td>
-                    </tr>
-                    <tr>
-                        <td>Sprint/Dodge</td>
-                        <td>Shift</td>
-                        <td>Left Trigger</td>
-                        <td>Left Trigger</td>
-                    </tr>
-                    <tr>
-                        <td>Skill 1</td>
-                        <td>1</td>
-                        <td>D-pad Up</td>
-                        <td>D-pad Up</td>
-                    </tr>
-                    <tr>
-                        <td>Skill 2</td>
-                        <td>2</td>
-                        <td>D-pad Left</td>
-                        <td>D-pad Left</td>
-                    </tr>
-                    <tr>
-                        <td>Skill 3</td>
-                        <td>3</td>
-                        <td>D-pad Down</td>
-                        <td>D-pad Down</td>
-                    </tr>
-                    <tr>
-                        <td>Skill 4</td>
-                        <td>4</td>
-                        <td>D-pad Right</td>
-                        <td>D-pad Right</td>
-                    </tr>
-                    <tr>
-                        <td>Block</td>
-                        <td>Right Mouse</td>
-                        <td>Left Bumper</td>
-                        <td>Left Bumper</td>
-                    </tr>
-                    <tr>
-                        <td>Attack 1/Counter</td>
-                        <td>Left Mouse</td>
-                        <td></td>
-                        <td>X</td>
-                    </tr>
-                    <tr>
-                        <td>Jump</td>
-                        <td>Space</td>
-                        <td></td>
-                        <td>Y</td>
-                    </tr>
-                    <tr>
-                        <td>Crouch/Dive</td>
-                        <td>Ctrl</td>
-                        <td></td>
-                        <td>A</td>
-                    </tr>
-                    <tr>
-                        <td>Use Item</td>
-                        <td></td>
-                        <td></td>
-                        <td>B</td>
-                    </tr>
-                    <tr>
-                        <td>Switch Weapons</td>
-                        <td></td>
-                        <td>Right Trigger</td>
-                        <td>Right Trigger</td>
-                    </tr>
-                    <tr>
-                        <td>Throw</td>
-                        <td></td>
-                        <td>Right Bumper</td>
-                        <td>Right Bumper</td>
-                    </tr>
-                    <tr>
-                        <td>Switch Item</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Heavy attack</td>
-                        <td></td>
-                        <td></td>
-                        <td>Hold X</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const mechanicItems = document.querySelectorAll('.sidebar li');
+                
+                mechanicItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        // Remove active class from all items
+                        mechanicItems.forEach(i => i.classList.remove('active'));
+                        
+                        // Add active class to clicked item
+                        this.classList.add('active');
+                        
+                        // Hide all mechanic details
+                        document.querySelectorAll('.mechanic-details').forEach(detail => {
+                            detail.classList.remove('active');
+                        });
+                        
+                        // Show the selected mechanic
+                        const mechanicId = this.getAttribute('data-mechanic');
+                        document.getElementById(mechanicId).classList.add('active');
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
